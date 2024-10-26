@@ -1,5 +1,4 @@
 import { Experiences } from '@/constant'
-import { ExperienceProps } from '@/types'
 import React from 'react'
 import { MdOutlineArrowOutward } from 'react-icons/md'
 import StickyTitle from './StickyTitle'

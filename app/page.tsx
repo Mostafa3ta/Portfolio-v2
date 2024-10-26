@@ -35,7 +35,6 @@ export default function Home() {
           if (entry.target.id == 'projects') {
             setActiveSection('projects')
           }
-
         }
       })
     }, observerOptions)

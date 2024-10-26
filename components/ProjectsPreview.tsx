@@ -1,6 +1,5 @@
 import { MyProjects } from '@/constant'
 import React from 'react'
-import { FaArrowRightLong } from 'react-icons/fa6'
 import { MdOutlineArrowOutward } from 'react-icons/md'
 import StickyTitle from './StickyTitle'
 import Link from 'next/link'
