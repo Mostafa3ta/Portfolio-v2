@@ -32,7 +32,7 @@ export const Experiences = [
         company: 'Route Academy',
         title: 'Front-End Engineer (course)',
         from: 'August 2023', to: 'January 2024',
-        description: '•	Completed a comprehensive front-end development course covering HTML, CSS, and JavaScript fundamentals and developed a strong understanding of web development principles such as responsive design, accessibility, and performance optimization. Gained practical experience in building web applications using React and Next.js.',
+        description: 'Completed a comprehensive front-end development course covering HTML, CSS, and JavaScript fundamentals and developed a strong understanding of web development principles such as responsive design, accessibility, and performance optimization. Gained practical experience in building web applications using React and Next.js.',
         city: 'Cairo, Egypt',
         link: 'https://www.facebook.com/Routelearning/',
         techs: ['HTML & CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'React', 'Next.js', 'Typescript', 'Redux', 'Context API', 'Unit Testing', 'JQuery', 'AJAX', 'RESTful APIs',]
