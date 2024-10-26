@@ -1,101 +1,93 @@
-import Image from "next/image";
+'use client'
+import { About, Experience, Footer, Nav, ProjectsPreview, Socials } from "@/components";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { MdOutlineArrowOutward } from "react-icons/md";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [activeSection, setActiveSection] = useState('about')
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+
+    const about = document.getElementById('about')
+    const experience = document.getElementById('experience')
+    const projects = document.getElementById('projects')
+
+    const sections = [about, projects, experience]
+
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.2,
+    };
+
+    const observer = new IntersectionObserver(entries => {
+
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          if (entry.target.id == 'about') {
+            setActiveSection('about')
+          }
+          if (entry.target.id == 'experience') {
+            setActiveSection('experience')
+          }
+          if (entry.target.id == 'projects') {
+            setActiveSection('projects')
+          }
+
+        }
+      })
+    }, observerOptions)
+
+    sections?.forEach(section => {
+      section && observer.observe(section)
+    })
+  }, [])
+
+  return (<>
+    <div className="mx-auto min-h-screen max-w-screen-xl Josefin px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div className="lg:flex lg:justify-between lg:gap-4">
+
+        <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+          <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">Mostafa Mahmoud</h1>
+          <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Front-End Engineer</h2>
+          <p className="mt-4 max-w-xs leading-normal">
+            Dedicated developer delivering exceptional projects and innovative solutions. Strong foundation in frontend technologies.
+          </p>
+          <div className="mt-7">
+            <Link className="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base" href='/resume.pdf' target="_blank">
+              <span>Download Résumé <MdOutlineArrowOutward className="icon_style" /></span>
+            </Link>
+          </div>
+          <Nav activeSection={activeSection} />
+          <Socials />
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        <div className="pt-24 lg:w-1/2 lg:py-24">
+          <div id="about" className="sections_style">
+            <About />
+          </div>
+          <div id="experience" className="sections_style">
+            <Experience />
+          </div>
+          <div id="projects" className="sections_style">
+            <ProjectsPreview />
+            <div className="mt-12">
+              <Link href='/projects' className="inline-flex items-center leading-tight font-semibold text-slate-200 group">
+                <span>
+                  <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">View All Projects </span>
+                  <span className="whitespace-nowrap">
+                    <FaArrowRightLong className='ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none' />
+                  </span>
+                </span>
+              </Link>
+            </div>
+          </div>
+          <Footer />
+        </div>
+
+      </div>
     </div>
-  );
+  </>);
 }
