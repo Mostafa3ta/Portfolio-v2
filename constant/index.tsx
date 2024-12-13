@@ -40,8 +40,8 @@ export const Experiences = [
     {
         company: 'Camp Coding',
         title: 'Front-End Engineer',
-        from: 'March 2024', to: 'April 2024',
-        description: 'Effectively collaborated with designers and backend developers to ensure seamless integration and project delivery. Built multiple responsive web applications using React.js, Next.js, HTML, CSS, and JavaScript. Maintained and updated existing web applications',
+        from: 'March 2024', to: 'Present',
+        description: 'Collaborate with designers and backend developers to ensure seamless integration and project delivery. Building multiple responsive web applications using React.js, Next.js, HTML, CSS, and JavaScript. Maintain and update existing web applications',
         city: 'Tanta, Egypt',
         link: 'https://www.linkedin.com/company/campcoding/',
         techs: ['HTML & CSS', 'Bootstrap', 'JavaScript', 'React', 'Next.js', 'Typescript', 'Redux', 'RESTful APIs']
