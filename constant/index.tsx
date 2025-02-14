@@ -31,7 +31,7 @@ export const Experiences = [
     {
         company: 'Camp Coding',
         title: 'Front-End Engineer',
-        from: 'March 2024', to: 'Present',
+        from: 'March 2024', to: 'April 2024',
         description: 'Collaborate with designers and backend developers to ensure seamless integration and project delivery. Building multiple responsive web applications using React.js, Next.js, HTML, CSS, and JavaScript. Maintain and update existing web applications',
         city: 'Tanta, Egypt',
         link: 'https://www.linkedin.com/company/campcoding/',
@@ -40,7 +40,7 @@ export const Experiences = [
     {
         company: 'Route Academy',
         title: 'Front-End Engineer (course)',
-        from: 'August 2023', to: 'January 2024',
+        from: 'October 2023', to: 'February 2024',
         description: 'Completed a comprehensive front-end development course covering HTML, CSS, and JavaScript fundamentals and developed a strong understanding of web development principles such as responsive design, accessibility, and performance optimization. Gained practical experience in building web applications using React and Next.js.',
         city: 'Cairo, Egypt',
         link: 'https://www.facebook.com/Routelearning/',
