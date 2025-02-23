@@ -55,8 +55,8 @@ export default function Home() {
             Dedicated developer delivering exceptional projects and innovative solutions. Strong foundation in frontend technologies.
           </p>
           <div className="mt-7">
-            <Link className="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base" href='/resume.pdf' target="_blank">
-              <span>Download Résumé <MdOutlineArrowOutward className="icon_style" /></span>
+            <Link href='https://drive.google.com/file/d/1rDiA_ctujMWmFdFENKmjycLDz3DJRMZz/view?usp=drive_link'  className="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base" target="_blank">
+              <span>View Résumé <MdOutlineArrowOutward className="icon_style" /></span>
             </Link>
           </div>
           <Nav activeSection={activeSection} />

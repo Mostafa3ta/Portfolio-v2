@@ -14,7 +14,7 @@ export default function About() {
         appealing and user-friendly websites.</p>
     </div>
     <div>
-      <p className="mb-4">In my current role as a <span className='text-white'> Front-End Engineer</span> at <a href='https://www.linkedin.com/company/campcoding/' target="_blank" rel="noreferrer noopener" className='about_links'> Camp Coding </a> start-up company , I
+      <p className="mb-4">In my current role as a <span className='text-white'> Front-End Engineer</span> at <a href='https://www.linkedin.com/company/campcoding/' target="_blank" rel="noreferrer noopener" className='about_links'> Camp Coding </a> company , I
         work on a variety of projects with <span className='text-white'>React
         </span> and <span className='text-white'>Next.js</span> that allows me to further
         develop my skills and gain practical experience in a professional setting. I

@@ -31,7 +31,7 @@ export const Experiences = [
     {
         company: 'Camp Coding',
         title: 'Front-End Engineer',
-        from: 'March 2024', to: 'April 2024',
+        from: 'March 2024', to: 'Present',
         description: 'Collaborate with designers and backend developers to ensure seamless integration and project delivery. Building multiple responsive web applications using React.js, Next.js, HTML, CSS, and JavaScript. Maintain and update existing web applications',
         city: 'Tanta, Egypt',
         link: 'https://www.linkedin.com/company/campcoding/',
