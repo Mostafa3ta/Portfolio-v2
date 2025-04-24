@@ -17,7 +17,7 @@ export const MyProjects = [
     { name: 'To-Do App', date: 'Nov 2023', techs: ['React.js', 'Bootstrap',], link: 'https://todo-list-eta-cyan-49.vercel.app/', git: 'https://github.com/Mostafa3ta/Todo-List-App', img: '/ToDo-List.png', description: 'Functional To-do list application utilizing JavaScript and local storage. Implemented CRUD operations (Create, Read, Update, Delete) to manage tasks efficientl.' },
     { name: 'Bookmarker', date: 'Oct 2023', techs: ['HTML', 'CSS', 'JavaScript',], link: 'https://bookmarker-teal.vercel.app/', git: 'https://github.com/Mostafa3ta/Bookmarker', img: '/Bookmarker2.png', description: '' },
     { name: 'Weather', date: 'Oct 2023', techs: ['HTML', 'CSS', 'JavaScript',], link: 'https://weather-omega-wine.vercel.app/', git: 'https://github.com/Mostafa3ta/Weather', img: '/weather.png', description: '' },
-    // { name: 'Bakery', date: 'Sep 2023', techs: ['HTML', 'CSS',], link: '', git: 'https://github.com/Mostafa3ta/Bakery', img: '/bakery.png', description: '' },
+    // { name: 'Bakery', date: 'Sep 2023', techs: ['HTML', 'CSS',], link: ' ', git: 'https://github.com/Mostafa3ta/Bakery', img: '/bakery.png', description: '' },
 ]
 
 export const Social = [
