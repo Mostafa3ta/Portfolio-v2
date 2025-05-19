@@ -64,7 +64,7 @@ export default function Home() {
         </div>
 
         <div className="pt-24 lg:w-1/2 lg:py-24">
-          <div id="about" className="sections_style">
+          <div id="about" className="sections_style lg:mt-16 lg:mb-44">
             <About />
           </div>
           <div id="experience" className="sections_style">

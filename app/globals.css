@@ -29,7 +29,7 @@ body {
 }
 
 .sections_style {
-  @apply mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24
+  @apply mb-16 scroll-mt-16 md:mb-24 lg:mb-40 lg:scroll-mt-24
 }
 
 .icon_style {

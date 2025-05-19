@@ -9,7 +9,7 @@ export const NavItems = [
 ]
 
 export const MyProjects = [
-    { name: 'Movies & Shows', date: 'Feb 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS','Shadcn UI'], link: 'https://movies-swart-one.vercel.app/', git: 'https://github.com/Mostafa3ta/movies', img: '/movies.png', description: 'Developed a responsive Movies & Shows web application using Next.js, leveraging the TMDB API to provide a dynamic and information-rich user experience. Implemented features like advanced search filtering, responsive image galleries, and optimized data fetching for smooth performance.' },
+    { name: 'Movies & Shows', date: 'Feb 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Shadcn UI'], link: 'https://movies-swart-one.vercel.app/', git: 'https://github.com/Mostafa3ta/movies', img: '/movies.png', description: 'Developed a responsive Movies & Shows web application using Next.js, leveraging the TMDB API to provide a dynamic and information-rich user experience. Implemented features like advanced search filtering, responsive image galleries, and optimized data fetching for smooth performance.' },
     { name: 'Cars Rental', date: 'Jan 2024', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Headless UI'], link: 'https://cars-five-chi.vercel.app/', git: 'https://github.com/Mostafa3ta/Cars-Rental', img: '/cars.png', description: 'Comprehensive car rental search platform using Tailwind CSS, TypeScript, and Headless UI. Utilized APIs from RapidAPI and API Ninjas to provide detailed car rental information.' },
     { name: 'E-commerce', date: 'Jan 2024', techs: ['React.js', 'Redux', 'Bootstrap',], link: 'https://e-commerce-delta-one-33.vercel.app/', git: 'https://github.com/Mostafa3ta/E-commerce_React.js', img: '/e-commerce-4.png', description: 'User-friendly e-commerce website using React, Redux Toolkit, and Bootstrap. Utilized dummyJSON API for product data and implemented token-based authentication for secure user access.' },
     { name: 'First Portfolio', date: 'Dec 2023', techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap',], link: 'https://portfolio-mu-sepia-68.vercel.app/', git: 'https://github.com/Mostafa3ta/Portfolio', img: '/profile-light.png', description: `My first Personal portfolio website, built it using HTML, CSS, and JavaScript. Utilized Bootstrap's grid system for efficient layout and responsiveness.` },
@@ -29,20 +29,29 @@ export const Social = [
 
 export const Experiences = [
     {
+        company: 'MedicaProf',
+        title: 'Mid-Level Front-End Engineer',
+        from: 'April 2025', to: 'Present',
+        description: 'Collaborate with designers and backend developers to ensure seamless integration and efficient project delivery for our platform. Develop and implement responsive user interfaces and advanced features like charts, full functional calendar and more using Next.js, Tailwind CSS, and JavaScript. Maintain, optimize, and update existing applications and platform components.',
+        location: 'Remote',
+        link: 'https://www.linkedin.com/company/medicaprof/',
+        techs: ['Next.js', 'HTML & CSS', 'Tailwind CSS', 'JavaScript', 'Typescript', 'Redux', 'RESTful APIs']
+    },
+    {
         company: 'Camp Coding',
         title: 'Front-End Engineer',
-        from: 'March 2024', to: 'Present',
+        from: 'March 2024', to: 'April 2025',
         description: 'Collaborate with designers and backend developers to ensure seamless integration and project delivery. Building multiple responsive web applications using React.js, Next.js, HTML, CSS, and JavaScript. Maintain and update existing web applications',
-        city: 'Tanta, Egypt',
+        location: 'Tanta, Egypt',
         link: 'https://www.linkedin.com/company/campcoding/',
-        techs: ['HTML & CSS', 'Bootstrap', 'JavaScript', 'React', 'Next.js', 'Typescript', 'Redux', 'RESTful APIs']
+        techs: ['Next.js', 'React', 'HTML & CSS', 'Bootstrap', 'JavaScript', 'Typescript', 'Redux', 'RESTful APIs']
     },
     {
         company: 'Route Academy',
-        title: 'Front-End Engineer (course)',
-        from: 'October 2023', to: 'February 2024',
+        title: 'Front-End Engineer (internship)',
+        from: 'October 2023', to: 'March 2024',
         description: 'Completed a comprehensive front-end development course covering HTML, CSS, and JavaScript fundamentals and developed a strong understanding of web development principles such as responsive design, accessibility, and performance optimization. Gained practical experience in building web applications using React and Next.js.',
-        city: 'Cairo, Egypt',
+        location: 'Cairo, Egypt',
         link: 'https://www.facebook.com/Routelearning/',
         techs: ['HTML & CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'React', 'Next.js', 'Typescript', 'Redux', 'Context API', 'Unit Testing', 'JQuery', 'AJAX', 'RESTful APIs',]
     },
