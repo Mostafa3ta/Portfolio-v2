@@ -1,61 +1,82 @@
 'use client'
 import { About, Experience, Footer, Nav, ProjectsPreview, Socials } from "@/components";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineArrowOutward } from "react-icons/md";
+
+type SectionId = 'about' | 'experience' | 'projects';
+
 
 export default function Home() {
   const [activeSection, setActiveSection] = useState('about')
 
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  // Use useCallback to memoize the handleIntersection function.
+  // This prevents it from being re-created on every render, which is good practice
+  // though not strictly necessary for an empty dependency array useEffect.
+  const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // We know entry.target.id will be one of our SectionId types
+        // as we filter for them, but a type assertion can make it explicit
+        setActiveSection(entry.target.id as SectionId);
+      }
+    });
+  }, []); // No dependencies, so this function is created once
+
   useEffect(() => {
+    const sectionIds: SectionId[] = ['about', 'experience', 'projects'];
 
-    const about = document.getElementById('about')
-    const experience = document.getElementById('experience')
-    const projects = document.getElementById('projects')
+    // Get elements and filter out any nulls
+    const sections: HTMLElement[] = sectionIds
+      .map(id => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null); // Type guard to ensure el is HTMLElement
 
-    const sections = [about, projects, experience]
+    // If no sections are found, log a warning and exit
+    if (sections.length === 0) {
+      console.warn("No observable sections found. Ensure IDs 'about', 'experience', and 'projects' exist in the DOM.");
+      return;
+    }
 
-    const observerOptions = {
-      root: null,
+    const observerOptions: IntersectionObserverInit = {
+      root: null, // Defaults to the viewport
       rootMargin: '0px',
       threshold: 0.2,
     };
 
-    const observer = new IntersectionObserver(entries => {
+    // Create a new IntersectionObserver instance
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          if (entry.target.id == 'about') {
-            setActiveSection('about')
-          }
-          if (entry.target.id == 'experience') {
-            setActiveSection('experience')
-          }
-          if (entry.target.id == 'projects') {
-            setActiveSection('projects')
-          }
-        }
-      })
-    }, observerOptions)
+    // Store the observer instance in the ref
+    observerRef.current = observer;
 
-    sections?.forEach(section => {
-      section && observer.observe(section)
-    })
-  }, [])
+    // Observe each found section
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+
+    // Cleanup function: disconnect the observer when the component unmounts
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, [handleIntersection]);
 
   return (<>
     <div className="mx-auto min-h-screen max-w-screen-xl Josefin px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
       <div className="lg:flex lg:justify-between lg:gap-4">
 
-        <div className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+        <div className="lg:sticky lg:top-0 lg:flex lg:max-h-fit lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">Mostafa Mahmoud</h1>
           <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">Front-End Engineer</h2>
           <p className="mt-4 max-w-xs leading-normal">
             Dedicated developer delivering exceptional projects and innovative solutions. Strong foundation in frontend technologies.
           </p>
           <div className="mt-7">
-            <Link href='https://drive.google.com/file/d/1rDiA_ctujMWmFdFENKmjycLDz3DJRMZz/view?usp=drive_link'  className="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base" target="_blank">
+            <Link href='https://drive.google.com/file/d/1rDiA_ctujMWmFdFENKmjycLDz3DJRMZz/view?usp=drive_link' className="inline-flex items-baseline leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base" target="_blank">
               <span>View Résumé <MdOutlineArrowOutward className="icon_style" /></span>
             </Link>
           </div>
@@ -64,7 +85,7 @@ export default function Home() {
         </div>
 
         <div className="pt-24 lg:w-1/2 lg:py-24">
-          <div id="about" className="sections_style lg:mt-16 lg:mb-44">
+          <div id="about" className="sections_style">
             <About />
           </div>
           <div id="experience" className="sections_style">
