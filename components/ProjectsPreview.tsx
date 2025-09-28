@@ -4,6 +4,7 @@ import { MdOutlineArrowOutward } from 'react-icons/md'
 import StickyTitle from './StickyTitle'
 import Link from 'next/link'
 import { FaGithub } from 'react-icons/fa'
+import clsx from 'clsx'
 
 export default function ProjectsPreview() {
   return (<>
@@ -18,7 +19,6 @@ export default function ProjectsPreview() {
                 <div className="absolute -inset-x-4 -inset-y-4 z-0 hidden rounded-md transition motion-reduce:transition-none lg:-inset-x-6 lg:block lg:group-hover:bg-slate-800/50 lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] lg:group-hover:drop-shadow-lg"></div>
                 <div className="z-10 sm:order-2 sm:col-span-6">
                   <div className='flex justify-between'>
-                    <h3>
                       <Link className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300  group/link text-base"
                         href={project.link} target="_blank" rel="noreferrer noopener">
                         <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block">
@@ -27,9 +27,8 @@ export default function ProjectsPreview() {
                           <MdOutlineArrowOutward className="icon_style" />
                         </span>
                       </Link>
-                    </h3>
-                    <Link href={project.git} target='_blank' className='z-20'>
-                      <FaGithub className='h-6 w-6 hover:text-teal-300' />
+                    <Link href={project.git} target='_blank' className={clsx('z-20', !project.git && 'pointer-events-none')} aria-label="GitHub Link">
+                      <FaGithub className={clsx('h-6 w-6 hover:text-teal-300', !project.git && 'opacity-50')} />
                     </Link>
                   </div>
                   <p className="mt-2 text-sm leading-normal">{project.description}</p>

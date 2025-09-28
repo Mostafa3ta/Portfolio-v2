@@ -1,4 +1,5 @@
 import { MyProjects } from '@/constant'
+import clsx from 'clsx'
 import { Metadata } from 'next'
 import Link from 'next/link'
 import React from 'react'
@@ -6,7 +7,7 @@ import { FaArrowLeft, FaGithub } from 'react-icons/fa'
 import { MdOutlineArrowOutward } from 'react-icons/md'
 
 
-export const metadata : Metadata = {
+export const metadata: Metadata = {
     title: "Projects | Mostafa Mahmoud",
 }
 
@@ -33,7 +34,7 @@ export default function Page() {
                             </thead>
                             <tbody>
                                 {MyProjects.map((project, index) =>
-                                    <tr className="border-b border-slate-300/10 last:border-none">
+                                    <tr key={index} className="border-b border-slate-300/10 last:border-none">
                                         <td className="td_style text-sm">
                                             <div className="translate-y-px">{project.date}</div>
                                         </td>
@@ -63,7 +64,7 @@ export default function Page() {
                                                 <li className="mb-1 flex items-center">
                                                     <a className="inline-flex items-baseline font-medium leading-tight text-slate-400 hover:text-slate-200 focus-visible:text-teal-300 group/link text-sm" href={project.link} target="_blank" rel="noreferrer noopener" aria-label="emersoncollective.com (opens in a new tab)">
                                                         <span>
-                                                            <span className="inline-block">{project.link.substring(8).slice(0, -5)}
+                                                            <span className="inline-block">{index === 0 ? project.link.substring(8).slice(0, -3) : project.link.substring(8).slice(0, -5)}
                                                                 <MdOutlineArrowOutward className="icon_style" />
                                                             </span>
                                                         </span>
@@ -72,8 +73,8 @@ export default function Page() {
                                             </ul>
                                         </td>
                                         <td className="hidden td_style sm:table-cell">
-                                            <Link href={project.git} target='_blank' className='z-20'>
-                                                <FaGithub className='icon_link' />
+                                            <Link href={project.git} target='_blank' className={clsx('z-20', !project.git && 'pointer-events-none')} aria-label="GitHub Link">
+                                                <FaGithub className={clsx('icon_link', !project.git && 'opacity-50')} />
                                             </Link>
                                         </td>
                                     </tr>
