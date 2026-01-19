@@ -1,36 +1,96 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Mostafa Mahmoud - Portfolio
 
-## Getting Started
+A modern, professional portfolio website showcasing my experience, projects, and skills as a Front-End Engineer. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🚀 Features
+
+- **Modern Design**: Clean, professional UI with smooth animations and transitions
+- **Framer Motion**: Fluid, performant animations with scroll-triggered effects
+- **Fully Responsive**: Optimized for all devices and screen sizes
+- **SEO Optimized**: Comprehensive metadata, Open Graph, and Twitter card support
+- **Performance**: Built with Next.js for optimal performance and fast loading times
+- **Accessibility**: WCAG compliant with proper ARIA labels and semantic HTML
+- **Interactive Elements**: Smooth scrolling, hover effects, and animated sections
+- **Dark Theme**: Eye-friendly dark color scheme with teal accents
+- **Error Handling**: Custom error and 404 pages with consistent branding
+
+## 🛠️ Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Icons**: React Icons
+- **Deployment**: Vercel
+
+## 📦 Getting Started
+
+First, install dependencies:
+
+```bash
+npm install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+portfolio-v2/
+├── app/              # Next.js app directory
+│   ├── layout.tsx    # Root layout with metadata
+│   ├── page.tsx      # Home page
+│   ├── projects/     # Projects page
+│   └── globals.css   # Global styles and animations
+├── components/       # React components
+│   ├── About.tsx
+│   ├── Experience.tsx
+│   ├── ProjectsPreview.tsx
+│   ├── Nav.tsx
+│   ├── Socials.tsx
+│   └── Footer.tsx
+├── constant/         # Data and constants
+└── public/           # Static assets
+```
 
-## Learn More
+## 🎨 Key Sections
 
-To learn more about Next.js, take a look at the following resources:
+- **Hero**: Introduction with resume link and navigation
+- **Experience**: Professional work history with detailed descriptions
+- **Projects**: Featured projects with technologies and live links
+- **Contact**: Social media links and contact information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📱 Responsive Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The portfolio is fully responsive with breakpoints for:
+- Mobile (< 640px)
+- Tablet (640px - 1024px)
+- Desktop (> 1024px)
 
-## Deploy on Vercel
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project is deployed on Vercel. Any push to the main branch automatically triggers a new deployment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+```
+
+## 📄 License
+
+This project is open source and available for reference.
+
+## 📧 Contact
+
+- **Email**: m2ostafa2000@gmail.com
+- **LinkedIn**: [Mostafa Mahmoud](https://www.linkedin.com/in/mostafa-mahmoud-33a1542b0)
+- **GitHub**: [Mostafa3ta](https://github.com/Mostafa3ta)
+
+---
+
+Built with ❤️ using Next.js and Tailwind CSS
