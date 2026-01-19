@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { ImMail, ImMail4 } from "react-icons/im"
-import { IoLogoWhatsapp } from "react-icons/io"
+// import { IoLogoWhatsapp } from "react-icons/io"
 
 export const NavItems = [
     // { name: 'about', link: '#about' },
