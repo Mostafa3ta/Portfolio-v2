@@ -3,13 +3,13 @@ import { ImMail, ImMail4 } from "react-icons/im"
 // import { IoLogoWhatsapp } from "react-icons/io"
 
 export const NavItems = [
-    // { name: 'about', link: '#about' },
     { name: 'experience', link: '#experience' },
     { name: 'projects', link: '#projects' },
+    { name: 'contact', link: '#contact' },
 ]
 
 export const MyProjects = [
-    { name: 'MedicaProf (Production)', date: 'Apr 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Hero UI', 'Framer Motion'], link: 'https://medicaprof.com/en', git: '', img: '/MedicaProf.png', description: "Developed and deployed core features for a live healthcare platform serving thousands of users. Built a fully functional appointment calendar system, interactive analytics dashboard with data visualizations, and reusable component architecture. Technologies: Next.js, TypeScript, Tailwind CSS." },
+    { name: 'MedicaProf', date: 'Apr 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Hero UI'], link: 'https://medicaprof.com/en', git: '', img: '/MedicaProf.png', description: "Developed and deployed core features for a live healthcare platform serving thousands of users. Built a fully functional appointment calendar system, interactive analytics dashboard with data visualizations, and reusable component architecture. Technologies: Next.js, TypeScript, Tailwind CSS." },
     { name: 'Movies & Shows', date: 'Feb 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Shadcn UI'], link: 'https://movies-swart-one.vercel.app/', git: 'https://github.com/Mostafa3ta/movies', img: '/movies.png', description: 'Full-stack movie discovery app leveraging TMDB API. Features advanced search filtering, responsive image galleries, and optimized data fetching with Next.js server components for enhanced performance.' },
     // { name: 'Cars Rental', date: 'Jan 2024', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Headless UI'], link: 'https://cars-five-chi.vercel.app/', git: 'https://github.com/Mostafa3ta/Cars-Rental', img: '/cars.png', description: 'Comprehensive car rental search platform using Tailwind CSS, TypeScript, and Headless UI. Utilized APIs from RapidAPI and API Ninjas to provide detailed car rental information.' },
     { name: 'E-commerce', date: 'Jan 2024', techs: ['React.js', 'Redux', 'Bootstrap',], link: 'https://e-commerce-delta-one-33.vercel.app/', git: 'https://github.com/Mostafa3ta/E-commerce_React.js', img: '/e-commerce-4.png', description: 'Full-featured e-commerce platform with Redux state management, JWT authentication, and RESTful API integration. Implements shopping cart, product filtering, and secure user authentication.' },

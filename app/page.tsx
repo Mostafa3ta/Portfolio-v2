@@ -1,11 +1,12 @@
 "use client";
 import {
-  About,
   Experience,
   Footer,
   Nav,
   ProjectsPreview,
   Socials,
+  Skills,
+  ContactCTA,
 } from "@/components";
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
@@ -13,10 +14,10 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { motion } from "framer-motion";
 
-type SectionId = "about" | "experience" | "projects";
+type SectionId =  "experience" | "projects" | "contact";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState("experience");
 
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -38,9 +39,9 @@ export default function Home() {
 
   useEffect(() => {
     const sectionIds: SectionId[] = [
-      // "about",
       "experience",
       "projects",
+      "contact",
     ];
 
     // Get elements and filter out any nulls
@@ -51,7 +52,7 @@ export default function Home() {
     // If no sections are found, log a warning and exit
     if (sections.length === 0) {
       console.warn(
-        "No observable sections found. Ensure IDs 'about', 'experience', and 'projects' exist in the DOM.",
+        "No observable sections found. Ensure IDs 'experience', 'projects', and 'contact' exist in the DOM.",
       );
       return;
     }
@@ -91,15 +92,17 @@ export default function Home() {
           <div className="lg:sticky lg:top-0 lg:flex lg:max-h-fit lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
             <div>
               <motion.h1
-                className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl"
+                className="text-4xl font-bold tracking-tight sm:text-5xl"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Mostafa Mahmoud
+                <span className="bg-gradient-to-r from-slate-200 via-teal-200 to-slate-200 bg-clip-text text-transparent">
+                  Mostafa Mahmoud
+                </span>
               </motion.h1>
               <motion.h2
-                className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl"
+                className="mt-3 text-lg font-semibold tracking-tight text-slate-200 sm:text-xl"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
@@ -107,13 +110,12 @@ export default function Home() {
                 Front-End Engineer
               </motion.h2>
               <motion.p
-                className="mt-4 max-w-xs leading-normal"
+                className="mt-4 max-w-xs leading-normal text-slate-300"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Front-End Developer building production-ready web applications
-                with modern frontend technologies.
+                Building <span className="text-teal-300 font-semibold">production-ready</span> web applications with modern technologies, focusing on performance and exceptional user experiences.
               </motion.p>
               <motion.div
                 className="mt-7"
@@ -142,15 +144,19 @@ export default function Home() {
           </div>
 
           <div className="pt-24 lg:w-1/2 lg:py-24">
-            {/* <div id="about" className="sections_style">
-            <About />
-          </div> */}
             <div id="experience" className="sections_style">
               <Experience />
             </div>
             <div id="projects" className="sections_style">
+              <Skills />
               <ProjectsPreview />
-              <div className="mt-12">
+              <motion.div
+                className="mt-12"
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.45, delay: 0.28 }}
+              >
                 <Link
                   href="/projects"
                   className="inline-flex items-center leading-tight font-semibold text-slate-200 group"
@@ -164,9 +170,19 @@ export default function Home() {
                     </span>
                   </span>
                 </Link>
-              </div>
+              </motion.div>
             </div>
-            <Footer />
+            <div id="contact">
+              <ContactCTA />
+            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 8 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.45, delay: 0.32 }}
+            >
+              <Footer />
+            </motion.div>
           </div>
         </div>
       </div>

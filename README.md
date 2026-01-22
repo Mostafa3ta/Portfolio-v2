@@ -23,22 +23,6 @@ A modern, professional portfolio website showcasing my experience, projects, and
 - **Icons**: React Icons
 - **Deployment**: Vercel
 
-## 📦 Getting Started
-
-First, install dependencies:
-
-```bash
-npm install
-```
-
-Then, run the development server:
-
-```bash
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 ## 🏗️ Project Structure
 
 ```
@@ -49,11 +33,12 @@ portfolio-v2/
 │   ├── projects/     # Projects page
 │   └── globals.css   # Global styles and animations
 ├── components/       # React components
-│   ├── About.tsx
 │   ├── Experience.tsx
 │   ├── ProjectsPreview.tsx
 │   ├── Nav.tsx
+│   ├── Skills.tsx
 │   ├── Socials.tsx
+|   ├── Contanct.tsx
 │   └── Footer.tsx
 ├── constant/         # Data and constants
 └── public/           # Static assets
@@ -63,6 +48,7 @@ portfolio-v2/
 
 - **Hero**: Introduction with resume link and navigation
 - **Experience**: Professional work history with detailed descriptions
+- **Skills**: Technical Skills
 - **Projects**: Featured projects with technologies and live links
 - **Contact**: Social media links and contact information
 
