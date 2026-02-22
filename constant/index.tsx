@@ -31,7 +31,7 @@ export const Social = [
 export const Experiences = [
     {
         company: 'MedicaProf',
-        title: 'Mid-Level Front-End Engineer',
+        title: 'Senior Front-End Engineer',
         from: 'April 2025', to: 'Present',
         description: 'Leading front-end development for a comprehensive healthcare platform serving dual user roles (Patients and Doctors). Architected and implemented complex features including a fully functional appointment calendar system and interactive analytics dashboard with data visualizations. Collaborate closely with cross-functional teams to deliver scalable, performant solutions using Next.js and modern frontend technologies.',
         location: 'Remote',
