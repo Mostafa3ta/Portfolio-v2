@@ -32,7 +32,14 @@ export default function Experience() {
                     </span>
                   </Link>
                 </h3>
-                <p className="mt-2 text-sm leading-normal text-slate-400">{item.description}</p>
+                <ul className="mt-2 space-y-1.5">
+                  {item.description.map((point, i) => (
+                    <li key={i} className="flex items-start gap-2 text-sm leading-normal text-slate-400">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-400/70"></span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
                 <ul className="mt-2 flex flex-wrap">
                   {/* {item.techs.map((tech, index) =>
                     <li key={index} className="mr-1.5 mt-2"><div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300 ">{tech}</div>

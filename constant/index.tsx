@@ -34,7 +34,13 @@ export const Experiences = [
         company: 'MedicaProf',
         title: 'Frontend Developer',
         from: 'April 2025', to: 'Present',
-        description: 'Leading frontend development for multiple production platforms. For MedicaProf healthcare platform: led frontend development serving dual user roles (Patients and Doctors), architected appointment calendar system and interactive analytics dashboard. For ELEVENT: building the entire frontend from scratch as the sole developer for a multi-role platform supporting vendors, organizers, job-seekers, freelancers, and administrators using Next.js, TypeScript, and ShadcnUI. Owning all architecture decisions, role-based routing, and feature delivery across all user roles through production deployment. Defining API contracts directly with the backend developer using FastAPI.',
+        description: [
+            'MedicaProf — Led frontend development on a production healthcare platform serving Patients and Doctors using Next.js, TypeScript, and HeroUI.',
+            'Built a fully functional appointment calendar system using FullCalendar and an interactive analytics dashboard with data visualizations using Apache ECharts.',
+            'ELEVENT — Sole frontend developer, built the entire platform from scratch for vendors, organizers, job-seekers, freelancers, and admins using Next.js, TypeScript, and ShadcnUI.',
+            'Owned all architecture decisions, role-based routing, and feature delivery through production deployment.',
+            'Defined API contracts directly with the backend developer using FastAPI.',
+        ],
         location: 'Remote',
         link: 'https://www.linkedin.com/company/medicaprof/',
         techs: ['Next.js', 'HTML & CSS', 'Tailwind CSS', 'JavaScript', 'Typescript', 'Redux', 'RESTful APIs']
@@ -43,7 +49,12 @@ export const Experiences = [
         company: 'Camp Coding',
         title: 'Frontend Developer',
         from: 'March 2024', to: 'April 2025',
-        description: 'Developed and maintained multiple production-grade responsive web applications using React.js and Next.js. Collaborated with designers and backend developers to ensure seamless integration and optimal user experience. Implemented modern frontend architecture patterns and best practices, contributing to improved application performance and maintainability.',
+        description: [
+            'Built and maintained multiple production-grade client web applications in a fast-paced agency environment.',
+            'Worked across React.js and Next.js projects, translating designs into pixel-perfect, accessible UI components.',
+            'Collaborated directly with designers and backend developers to integrate RESTful APIs and ship features on schedule.',
+            'Applied scalable frontend architecture patterns, improving performance and long-term maintainability.',
+        ],
         location: 'Tanta, Egypt',
         link: 'https://www.linkedin.com/company/campcoding/',
         techs: ['Next.js', 'React', 'HTML & CSS', 'Bootstrap', 'JavaScript', 'Typescript', 'Redux', 'RESTful APIs']
@@ -52,7 +63,12 @@ export const Experiences = [
         company: 'Route Academy',
         title: 'Frontend Developer (internship)',
         from: 'October 2023', to: 'March 2024',
-        description: 'Completed an intensive frontend development program covering modern web technologies and best practices. Built multiple real-world projects using React and Next.js, gaining hands-on experience with responsive design, accessibility standards, and performance optimization. Collaborated with peers in an agile environment to deliver high-quality web applications.',
+        description: [
+            'Completed an intensive 6-month frontend development bootcamp covering core and advanced web technologies.',
+            'Built 7+ real-world projects including an e-commerce platform, quiz app, weather app, and task manager.',
+            'Practiced responsive design, accessibility standards, performance optimization, and unit testing.',
+            'Collaborated with peers in an agile environment to deliver production-ready applications.',
+        ],
         location: 'Cairo, Egypt',
         link: 'https://www.facebook.com/Routelearning/',
         techs: ['HTML & CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'React', 'Next.js', 'Typescript', 'Redux', 'Context API', 'Unit Testing', 'JQuery', 'AJAX', 'RESTful APIs',]

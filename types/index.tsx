@@ -16,7 +16,7 @@ export interface ExperienceProps {
     from: string;
     to: string;
     link: string;
-    description: string;
+    description: string[];
     city: string;
     techs: string[];
 }
