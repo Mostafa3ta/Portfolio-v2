@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { 
   SiHtml5, SiCss3, SiJavascript, SiReact, SiNextdotjs, SiTypescript,
-  SiRedux, SiTailwindcss, SiBootstrap, SiJquery, SiGit, SiGraphql
+  SiRedux, SiTailwindcss, SiGit, SiGraphql, SiPython, SiFastapi
 } from 'react-icons/si'
 import { FaCode } from 'react-icons/fa'
 import StickyTitle from './StickyTitle'
@@ -14,14 +14,14 @@ const skills = [
   { name: 'CSS3', icon: <SiCss3 className="text-3xl" />, color: 'group-hover:text-blue-500' },
   { name: 'JavaScript', icon: <SiJavascript className="text-3xl" />, color: 'group-hover:text-yellow-400' },
   { name: 'TypeScript', icon: <SiTypescript className="text-3xl" />, color: 'group-hover:text-blue-600' },
+  { name: 'Python', icon: <SiPython className="text-3xl" />, color: 'group-hover:text-blue-400' },
   { name: 'React', icon: <SiReact className="text-3xl" />, color: 'group-hover:text-cyan-400' },
   { name: 'Next.js', icon: <SiNextdotjs className="text-3xl" />, color: 'group-hover:text-slate-200' },
   { name: 'Redux', icon: <SiRedux className="text-3xl" />, color: 'group-hover:text-purple-500' },
   { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-3xl" />, color: 'group-hover:text-cyan-400' },
-  { name: 'Bootstrap', icon: <SiBootstrap className="text-3xl" />, color: 'group-hover:text-purple-600' },
-  { name: 'jQuery', icon: <SiJquery className="text-3xl" />, color: 'group-hover:text-blue-400' },
   { name: 'Git', icon: <SiGit className="text-3xl" />, color: 'group-hover:text-orange-600' },
   { name: 'REST/GraphQL', icon: <SiGraphql className="text-3xl" />, color: 'group-hover:text-pink-500' },
+  { name: 'FastAPI', icon: <SiFastapi className="text-3xl" />, color: 'group-hover:text-teal-400' },
 ]
 
 export default function Skills() {
