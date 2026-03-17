@@ -84,22 +84,28 @@ export default function Page() {
                       <td className="td_style font-semibold leading-snug text-slate-200">
                         <div>
                           <div className="block sm:hidden">
-                            <a
-                              className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 sm:hidden group/link text-base transition-colors duration-200"
-                              href={project.link}
-                              target="_blank"
-                              rel="noreferrer noopener"
-                              aria-label={`${project.name} (opens in new tab)`}
-                            >
-                              <span className="inline-block">
+                            {project.link ? (
+                              <a
+                                className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 sm:hidden group/link text-base transition-colors duration-200"
+                                href={project.link}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                aria-label={`${project.name} (opens in new tab)`}
+                              >
+                                <span className="inline-block">
+                                  {project.name}
+                                  <MdOutlineArrowOutward className="icon_style" />
+                                </span>
+                              </a>
+                            ) : (
+                              <span className="font-medium leading-tight text-slate-200">
                                 {project.name}
-                                <MdOutlineArrowOutward className="icon_style" />
                               </span>
-                            </a>
+                            )}
                           </div>
                           <div className="hidden sm:flex items-center">
                             {project.name}
-                            {index === 0 && (
+                            {project.isProduction && (
                               <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-teal-600/20 text-teal-300 border border-teal-400/20">
                                 Production
                               </span>
@@ -119,26 +125,28 @@ export default function Page() {
                         </ul>
                       </td>
                       <td className="hidden td_style sm:table-cell">
-                        <ul className="translate-y-1">
-                          <li className="mb-1 flex items-center">
-                            <a
-                              className="inline-flex items-baseline font-medium leading-tight text-slate-400 hover:text-teal-300 focus-visible:text-teal-300 group/link text-sm transition-colors duration-200"
-                              href={project.link}
-                              target="_blank"
-                              rel="noreferrer noopener"
-                              aria-label={`${project.name} website (opens in new tab)`}
-                            >
-                              <span>
-                                <span className="inline-block">
-                                  {index === 0
-                                    ? project.link.substring(8).slice(0, -3)
-                                    : project.link.substring(8).slice(0, -5)}
-                                  <MdOutlineArrowOutward className="icon_style" />
+                        {project.link ? (
+                          <ul className="translate-y-1">
+                            <li className="mb-1 flex items-center">
+                              <a
+                                className="inline-flex items-baseline font-medium leading-tight text-slate-400 hover:text-teal-300 focus-visible:text-teal-300 group/link text-sm transition-colors duration-200"
+                                href={project.link}
+                                target="_blank"
+                                rel="noreferrer noopener"
+                                aria-label={`${project.name} website (opens in new tab)`}
+                              >
+                                <span>
+                                  <span className="inline-block">
+                                    {project.link.substring(8).replace(/\/$/, '')}
+                                    <MdOutlineArrowOutward className="icon_style" />
+                                  </span>
                                 </span>
-                              </span>
-                            </a>
-                          </li>
-                        </ul>
+                              </a>
+                            </li>
+                          </ul>
+                        ) : (
+                          <span className="text-sm text-slate-500 italic">In Progress</span>
+                        )}
                       </td>
                       <td className="hidden td_style sm:table-cell">
                         <Link

@@ -107,7 +107,7 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-               Senior Front-End Engineer
+               Frontend Developer
               </motion.h2>
               <motion.p
                 className="mt-4 max-w-xs leading-normal text-slate-300"

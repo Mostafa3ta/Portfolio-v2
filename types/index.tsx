@@ -8,6 +8,7 @@ export interface ProjectProps {
     description: string;
     img: string;
     techs: string[];
+    isProduction?: boolean;
 }
 export interface ExperienceProps {
     title: string;

@@ -1,6 +1,6 @@
 # Mostafa Mahmoud - Portfolio
 
-A modern, professional portfolio website showcasing my experience, projects, and skills as a Front-End Engineer. Built with Next.js 14, TypeScript, and Tailwind CSS.
+A modern, professional portfolio website showcasing my experience, projects, and skills as a Frontend Developer. Built with Next.js 14, TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 

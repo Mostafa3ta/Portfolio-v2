@@ -10,10 +10,10 @@ const JosefinSans = Arima({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mostafa Mahmoud | Front-End Engineer",
+    default: "Mostafa Mahmoud | Frontend Developer",
     template: "%s | Mostafa Mahmoud"
   },
-  description: "Experienced Front-End Engineer specializing in React, Next.js, and TypeScript. Building scalable, performant web applications with modern frontend technologies. Available for frontend development opportunities.",
+  description: "Experienced Frontend Developer specializing in React, Next.js, and TypeScript. Building scalable, performant web applications with modern frontend technologies. Available for frontend development opportunities.",
   keywords: ["Frontend Developer", "React Developer", "Next.js Developer", "TypeScript", "Web Developer", "JavaScript", "Tailwind CSS", "Mostafa Mahmoud"],
   authors: [{ name: "Mostafa Mahmoud" }],
   creator: "Mostafa Mahmoud",
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://mostafa-mahmoud.vercel.app",
-    title: "Mostafa Mahmoud | Front-End Engineer",
-    description: "Experienced Front-End Engineer specializing in React, Next.js, and TypeScript. Building scalable, performant web applications.",
+    title: "Mostafa Mahmoud | Frontend Developer",
+    description: "Experienced Frontend Developer specializing in React, Next.js, and TypeScript. Building scalable, performant web applications.",
     siteName: "Mostafa Mahmoud Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mostafa Mahmoud | Front-End Engineer",
-    description: "Experienced Front-End Engineer specializing in React, Next.js, and TypeScript.",
+    title: "Mostafa Mahmoud | Frontend Developer",
+    description: "Experienced Frontend Developer specializing in React, Next.js, and TypeScript.",
   },
   robots: {
     index: true,
