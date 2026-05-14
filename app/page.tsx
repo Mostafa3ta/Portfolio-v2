@@ -128,7 +128,7 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    href="https://drive.google.com/file/d/1rDiA_ctujMWmFdFENKmjycLDz3DJRMZz/view?usp=drive_link"
+                    href="https://drive.google.com/file/d/1mp4K7hO4RgEgGsbUtZmDmMH8xlmPSFfo/view?usp=sharing"
                     className="inline-flex items-center gap-2 rounded-lg bg-teal-400/10 px-4 py-2.5 leading-tight text-slate-200 hover:bg-teal-400/20 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base transition-all duration-300 border border-teal-400/20 hover:border-teal-400/40"
                     target="_blank"
                     aria-label="View Resume (opens in new tab)"
