@@ -4,7 +4,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { MdEmail } from 'react-icons/md'
-import { FaLinkedin, FaGithub } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'
 
 export default function ContactCTA() {
   return (
@@ -37,8 +37,8 @@ export default function ContactCTA() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            I'm currently available and open to discussing new opportunities. 
-            Whether you have a project in mind or just want to connect, feel free to reach out.
+            I'm available immediately for full-time roles — development, QA, or technical
+            support — on-site internationally or remote. Reach out on WhatsApp or email.
           </motion.p>
           
           <motion.div 
@@ -57,7 +57,18 @@ export default function ContactCTA() {
                 Get In Touch
               </Link>
             </motion.div>
-            
+
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link
+                href="https://wa.me/201206856251"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-slate-500 rounded-lg text-slate-200 font-semibold transition-all duration-300"
+              >
+                <FaWhatsapp className="text-xl" />
+                WhatsApp
+              </Link>
+            </motion.div>
+
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="https://www.linkedin.com/in/mostafa-mahmoud-33a1542b0"

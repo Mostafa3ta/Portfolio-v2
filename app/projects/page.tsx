@@ -1,7 +1,6 @@
 "use client";
 
 import { MyProjects } from "@/constant";
-import clsx from "clsx";
 import Link from "next/link";
 import React, { useEffect } from "react";
 import { FaArrowLeft, FaGithub } from "react-icons/fa";
@@ -149,22 +148,20 @@ export default function Page() {
                         )}
                       </td>
                       <td className="hidden td_style sm:table-cell">
-                        <Link
-                          href={project.git}
-                          target="_blank"
-                          className={clsx(
-                            "z-20 transition-colors duration-200",
-                            !project.git && "pointer-events-none",
-                          )}
-                          aria-label={`${project.name} GitHub repository`}
-                        >
-                          <FaGithub
-                            className={clsx(
-                              "icon_link",
-                              !project.git && "opacity-50",
-                            )}
-                          />
-                        </Link>
+                        {project.git ? (
+                          <Link
+                            href={project.git}
+                            target="_blank"
+                            className="z-20 transition-colors duration-200"
+                            aria-label={`${project.name} GitHub repository`}
+                          >
+                            <FaGithub className="icon_link" />
+                          </Link>
+                        ) : (
+                          <span className="z-20 pointer-events-none" aria-hidden="true">
+                            <FaGithub className="icon_link opacity-50" />
+                          </span>
+                        )}
                       </td>
                     </tr>
                   ))}

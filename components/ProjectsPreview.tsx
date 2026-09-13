@@ -43,9 +43,15 @@ export default function ProjectsPreview() {
                           </h3>
                         )}
                       </div>
-                    <Link href={project.git} target='_blank' className={clsx('z-20 transition-all duration-200', !project.git && 'pointer-events-none')} aria-label={`${project.name} GitHub repository`}>
-                      <FaGithub className={clsx('h-6 w-6 hover:text-teal-300 transition-colors duration-200', !project.git && 'opacity-50')} />
-                    </Link>
+                    {project.git ? (
+                      <Link href={project.git} target='_blank' className='z-20 transition-all duration-200' aria-label={`${project.name} GitHub repository`}>
+                        <FaGithub className='h-6 w-6 hover:text-teal-300 transition-colors duration-200' />
+                      </Link>
+                    ) : (
+                      <span className='z-20 pointer-events-none' aria-hidden='true'>
+                        <FaGithub className='h-6 w-6 opacity-50' />
+                      </span>
+                    )}
                   </div>
                   {project.isProduction && (
                     <span className="mt-1 inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-teal-400/10 text-teal-300 border border-teal-400/20">

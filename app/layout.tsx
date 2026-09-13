@@ -10,25 +10,25 @@ const JosefinSans = Arima({
 
 export const metadata: Metadata = {
   title: {
-    default: "Mostafa Mahmoud | Frontend Developer",
+    default: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
     template: "%s | Mostafa Mahmoud"
   },
-  description: "Experienced Frontend Developer specializing in React, Next.js, and TypeScript. Building scalable, performant web applications with modern frontend technologies. Available for frontend development opportunities.",
-  keywords: ["Frontend Developer", "React Developer", "Next.js Developer", "TypeScript", "Web Developer", "JavaScript", "Tailwind CSS", "Mostafa Mahmoud"],
+  description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
+  keywords: ["Frontend Developer", "React Developer", "Next.js Developer", "TypeScript", "Web Developer", "JavaScript", "Tailwind CSS", "Mostafa Mahmoud", "QA Tester", "Manual Testing", "Technical Support", "IT Support", "Web Developer UAE", "Web Developer Dubai", "Arabic English"],
   authors: [{ name: "Mostafa Mahmoud" }],
   creator: "Mostafa Mahmoud",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://mostafa-mahmoud.vercel.app",
-    title: "Mostafa Mahmoud | Frontend Developer",
-    description: "Experienced Frontend Developer specializing in React, Next.js, and TypeScript. Building scalable, performant web applications.",
+    url: "https://portfolio-v2-7p0.pages.dev",
+    title: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
+    description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
     siteName: "Mostafa Mahmoud Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mostafa Mahmoud | Frontend Developer",
-    description: "Experienced Frontend Developer specializing in React, Next.js, and TypeScript.",
+    title: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
+    description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
   },
   robots: {
     index: true,

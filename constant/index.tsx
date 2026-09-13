@@ -1,6 +1,6 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { ImMail, ImMail4 } from "react-icons/im"
-// import { IoLogoWhatsapp } from "react-icons/io"
+import { IoLogoWhatsapp } from "react-icons/io"
 
 export const NavItems = [
     { name: 'experience', link: '#experience' },
@@ -26,7 +26,7 @@ export const Social = [
     { name: 'GitHub', link: 'https://github.com/Mostafa3ta', icon: <FaGithub className='icon_link' /> },
     { name: 'LinkedIn', link: 'https://www.linkedin.com/in/mostafa-mahmoud-33a1542b0', icon: <FaLinkedin className='icon_link' /> },
     { name: 'Email', link: 'mailto:m2ostafa2000@gmail.com', icon: <ImMail4 className='icon_link' /> },
-    // { name: 'WhatsApp', link: 'https://wa.me/+20', icon: <IoLogoWhatsapp className='icon_link' /> },
+    { name: 'WhatsApp', link: 'https://wa.me/+201206856251', icon: <IoLogoWhatsapp className='icon_link' /> },
 ]
 
 export const Experiences = [
@@ -40,6 +40,7 @@ export const Experiences = [
             'ELEVENT — Sole frontend developer, built the entire platform from scratch for vendors, organizers, job-seekers, freelancers, and admins using Next.js, TypeScript, and ShadcnUI.',
             'Owned all architecture decisions, role-based routing, and feature delivery through production deployment.',
             'Defined API contracts directly with the backend developer using FastAPI.',
+            'Own quality and reliability end to end: manual and cross-device testing, bug triage, and ongoing production support and maintenance for live users.',
         ],
         location: 'Remote',
         link: 'https://www.linkedin.com/company/medicaprof/',

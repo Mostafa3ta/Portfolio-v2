@@ -107,15 +107,23 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-               Frontend Developer
+               <span className="whitespace-nowrap">Web Developer ·</span> <span className="whitespace-nowrap">QA Testing ·</span> <span className="whitespace-nowrap">Technical Support</span>
               </motion.h2>
+              <motion.p
+                className="mt-2 text-sm text-slate-500"
+                initial={{ opacity: 0, x: -30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5, delay: 0.15 }}
+              >
+                <span className="whitespace-nowrap">Alexandria, Egypt ·</span> <span className="whitespace-nowrap">Open to international relocation ·</span> <span className="whitespace-nowrap">Available immediately</span>
+              </motion.p>
               <motion.p
                 className="mt-4 max-w-xs leading-normal text-slate-300"
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                Building <span className="text-teal-300 font-semibold">production-ready</span> web applications with modern technologies, focusing on performance and exceptional user experiences.
+                Web developer with 3 years of experience shipping and maintaining <span className="text-teal-300 font-semibold">production</span> platforms end to end — building features, testing them across devices and browsers, and supporting live users. Comfortable across development, QA, and technical support work, with an AI-assisted workflow and rigorous human review.
               </motion.p>
               <motion.div
                 className="mt-7"
@@ -128,12 +136,13 @@ export default function Home() {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Link
-                    href="https://drive.google.com/file/d/1mp4K7hO4RgEgGsbUtZmDmMH8xlmPSFfo/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1mp4K7hO4RgEgGsbUtZmDmMH8xlmPSFfo/view"
                     className="inline-flex items-center gap-2 rounded-lg bg-teal-400/10 px-4 py-2.5 leading-tight text-slate-200 hover:bg-teal-400/20 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base transition-all duration-300 border border-teal-400/20 hover:border-teal-400/40"
                     target="_blank"
-                    aria-label="View Resume (opens in new tab)"
+                    rel="noopener noreferrer"
+                    aria-label="View CV (opens in new tab)"
                   >
-                    <span>View Résumé</span>
+                    <span>View CV</span>
                     <MdOutlineArrowOutward className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
                   </Link>
                 </motion.div>
