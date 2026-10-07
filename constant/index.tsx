@@ -9,7 +9,7 @@ export const NavItems = [
 ]
 
 export const MyProjects = [
-    { name: 'ELEVENT', date: 'Feb 2026', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Shadcn UI'], link: '', git: '', img: '/ELEVENT-LOGO.png', description: "Building the entire frontend from scratch as the sole developer for a multi-role platform supporting vendors, organizers, job-seekers, freelancers, and administrators. Owning all architecture decisions, role-based routing, and feature delivery across all user roles through production deployment. Defining API contracts directly with the backend developer using FastAPI.", isProduction: true },
+    { name: 'ELEVENT', date: 'Feb 2026', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'Cloudflare'], link: 'https://elevent.ae/', git: '', img: '/ELEVENT-LOGO.png', description: "Sole developer of a live event-operations platform for food, retail and catering events in the UAE, delivered end to end: web app, backend API, database and production deployment, with an iOS/Android app in progress. Runs the full vendor workflow, from onboarding and document checks through event applications, contracts, food-safety audits, sales reconciliation, invoicing and payouts, with role-based access for vendors, clients, auditors, finance and admins.", isProduction: true },
     { name: 'MedicaProf', date: 'Apr 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Hero UI'], link: 'https://medicaprof.com/en', git: '', img: '/MedicaProf.png', description: "Developed and deployed core features for a live healthcare platform serving thousands of users. Built a fully functional appointment calendar system, interactive analytics dashboard with data visualizations, and reusable component architecture. Technologies: Next.js, TypeScript, Tailwind CSS.", isProduction: true },
     { name: 'Movies & Shows', date: 'Feb 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Shadcn UI'], link: 'https://movies-b8e.pages.dev/', git: 'https://github.com/Mostafa3ta/movies', img: '/movies.png', description: 'Full-stack movie discovery app leveraging TMDB API. Features advanced search filtering, responsive image galleries, and optimized data fetching with Next.js server components for enhanced performance.' },
     // { name: 'Cars Rental', date: 'Jan 2024', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Headless UI'], link: 'https://cars-five-chi.vercel.app/', git: 'https://github.com/Mostafa3ta/Cars-Rental', img: '/cars.png', description: 'Comprehensive car rental search platform using Tailwind CSS, TypeScript, and Headless UI. Utilized APIs from RapidAPI and API Ninjas to provide detailed car rental information.' },
@@ -24,7 +24,7 @@ export const MyProjects = [
 
 export const Social = [
     { name: 'GitHub', link: 'https://github.com/Mostafa3ta', icon: <FaGithub className='icon_link' /> },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/mostafa-mahmoud-33a1542b0', icon: <FaLinkedin className='icon_link' /> },
+    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/mostafa-m-dev', icon: <FaLinkedin className='icon_link' /> },
     { name: 'Email', link: 'mailto:m2ostafa2000@gmail.com', icon: <ImMail4 className='icon_link' /> },
     { name: 'WhatsApp', link: 'https://wa.me/+201206856251', icon: <IoLogoWhatsapp className='icon_link' /> },
 ]
@@ -37,9 +37,10 @@ export const Experiences = [
         description: [
             'MedicaProf — Led frontend development on a production healthcare platform serving Patients and Doctors using Next.js, TypeScript, and HeroUI.',
             'Built a fully functional appointment calendar system using FullCalendar and an interactive analytics dashboard with data visualizations using Apache ECharts.',
-            'ELEVENT — Sole frontend developer, built the entire platform from scratch for vendors, organizers, job-seekers, freelancers, and admins using Next.js, TypeScript, and ShadcnUI.',
-            'Owned all architecture decisions, role-based routing, and feature delivery through production deployment.',
-            'Defined API contracts directly with the backend developer using FastAPI.',
+            'ELEVENT — Sole developer of a live event-operations platform for food, retail and catering events in the UAE, delivered end to end: web app, backend API, database and deployment, with an iOS/Android app in progress.',
+            'Built the full vendor workflow with Next.js, TypeScript, FastAPI and PostgreSQL: onboarding and document checks, event applications, contracts, food-safety audits, sales reconciliation, invoicing and payouts, with role-based access for vendors, clients, auditors, finance and admins.',
+            'Handled deployment and hosting: web app on Cloudflare, API and managed PostgreSQL on DigitalOcean, with daily backups and a documented release and rollback process.',
+            'Worked directly with the product owner through structured testing rounds, turning feedback into tracked change requests.',
             'Own quality and reliability end to end: manual and cross-device testing, bug triage, and ongoing production support and maintenance for live users.',
         ],
         location: 'Remote',
