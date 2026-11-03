@@ -8,7 +8,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
 const description =
-  "How I built and operate Elevent, a live event-operations platform for UAE events, as its sole developer: architecture, frontend decisions, a production-platform bug and the numbers.";
+  "How I built and operate Elevent, a live event-operations platform, as its sole developer: architecture, frontend decisions, a production-platform bug and the numbers.";
 
 export const metadata: Metadata = {
   title: "Elevent case study",
@@ -60,7 +60,7 @@ const decided = [
   "Session tokens live in httpOnly cookies behind a Next.js proxy, never in JavaScript.",
   "One permission source drives the UI; the API is the security boundary.",
   "The hosting split: website at the Cloudflare edge; API, worker and database on DigitalOcean, with the API reachable only through a tunnel.",
-  "Money is stored as exact decimals, never floats, and business dates follow Dubai time.",
+  "Money is stored as exact decimals, never floats, and business dates follow UAE time.",
   "PostgreSQL with migrations as the only way the schema changes, and every migration can be rolled back.",
 ];
 

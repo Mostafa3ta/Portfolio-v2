@@ -61,7 +61,7 @@ export const HowIWork = {
     catches: [
         'A CSRF check that accepted any token. Rebuilt it before launch as an origin check plus a real double-submit token.',
         'An email client with no network timeout that could hang the daily reminder job and silently skip every later run. Replaced it with one that times out.',
-        '“Today” calculated in UTC, which let an expired licence pass eligibility checks for the first four hours of every UAE morning. All business dates now use Dubai time.',
+        '“Today” calculated in UTC, which let an expired licence pass eligibility checks for the first four hours of every UAE morning. All business dates now use UAE time.',
         'An N+1 query in the vendor-approval queue. Batching it cut the p95 response time from 1.36 s to 0.17 s.',
     ],
 }
