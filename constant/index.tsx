@@ -3,7 +3,7 @@ import { ImMail4 } from "react-icons/im"
 import { IoLogoWhatsapp } from "react-icons/io"
 import { MdAccessibilityNew, MdAutoAwesome, MdDevices, MdSpeed, MdSyncAlt, MdTranslate } from "react-icons/md"
 import { SiCloudflare, SiGit, SiGraphql, SiNextdotjs, SiReact, SiRedux, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si"
-import type { ExperienceProps, SkillGroupProps } from "@/types"
+import type { ExperienceProps, SkillGroupProps, WorkProps } from "@/types"
 import { CONTACT } from "./site"
 
 export { SITE, CONTACT } from "./site"
@@ -11,7 +11,8 @@ export { SITE, CONTACT } from "./site"
 export const NavItems = [
     { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'work', label: 'Work' },
+    { id: 'how-i-work', label: 'How I work' },
     { id: 'contact', label: 'Contact' },
 ]
 
@@ -27,17 +28,43 @@ export const Hero = {
     ],
 }
 
-export const MyProjects = [
-    { name: 'ELEVENT', date: 'Feb 2026', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'Cloudflare'], link: 'https://elevent.ae/', git: '', img: '/ELEVENT-LOGO.png', description: "Sole developer of a live event-operations platform for food, retail and catering events in the UAE, delivered end to end: web app, backend API, database and production deployment, with an iOS/Android app in progress. Runs the full vendor workflow, from onboarding and document checks through event applications, contracts, food-safety audits, sales reconciliation, invoicing and payouts, with role-based access for vendors, clients, auditors, finance and admins.", isProduction: true },
-    { name: 'MedicaProf', date: 'Apr 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Hero UI'], link: 'https://medicaprof.com/en', git: '', img: '/MedicaProf.png', description: "Developed and deployed core features for a live healthcare platform serving thousands of users. Built a fully functional appointment calendar system, interactive analytics dashboard with data visualizations, and reusable component architecture. Technologies: Next.js, TypeScript, Tailwind CSS.", isProduction: true },
-    { name: 'Movies & Shows', date: 'Feb 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Shadcn UI'], link: 'https://movies-b8e.pages.dev/', git: 'https://github.com/Mostafa3ta/movies', img: '/movies.png', description: 'Full-stack movie discovery app leveraging TMDB API. Features advanced search filtering, responsive image galleries, and optimized data fetching with Next.js server components for enhanced performance.' },
-    { name: 'E-commerce', date: 'Jan 2024', techs: ['React.js', 'Redux', 'Bootstrap',], link: 'https://e-commerce-delta-one-33.vercel.app/', git: 'https://github.com/Mostafa3ta/E-commerce_React.js', img: '/e-commerce-4.png', description: 'Full-featured e-commerce platform with Redux state management, JWT authentication, and RESTful API integration. Implements shopping cart, product filtering, and secure user authentication.' },
-    { name: 'First Portfolio', date: 'Dec 2023', techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap',], link: 'https://portfolio-mu-sepia-68.vercel.app/', git: 'https://github.com/Mostafa3ta/Portfolio', img: '/profile-light.png', description: `Responsive personal portfolio showcasing web development fundamentals. Built with vanilla JavaScript, featuring smooth animations, dynamic content rendering, and mobile-first design using Bootstrap.` },
-    { name: 'Quiz App', date: 'Nov 2023', techs: ['React.js', 'Redux', 'MUI',], link: 'https://quiz-blond-gamma-63.vercel.app/', git: 'https://github.com/Mostafa3ta/Quiz-App', img: '/Quiz.png', description: 'Interactive quiz application with customizable settings (category, difficulty, question count). Integrated TriviaDB API with Redux for centralized state management and Material-UI for polished interface.' },
-    { name: 'To-Do App', date: 'Nov 2023', techs: ['React.js', 'Bootstrap',], link: 'https://todo-list-eta-cyan-49.vercel.app/', git: 'https://github.com/Mostafa3ta/Todo-List-App', img: '/ToDo-List.png', description: 'Task management application with full CRUD operations and local storage persistence. Features real-time updates, task filtering, and responsive design for optimal user experience.' },
-    { name: 'Bookmarker', date: 'Oct 2023', techs: ['HTML', 'CSS', 'JavaScript',], link: 'https://bookmarker-teal.vercel.app/', git: 'https://github.com/Mostafa3ta/Bookmarker', img: '/Bookmarker2.png', description: 'Bookmark manager with URL validation, local storage, and clean UI. Demonstrates proficiency in DOM manipulation, form handling, and client-side data persistence.' },
-    { name: 'Weather', date: 'Oct 2023', techs: ['HTML', 'CSS', 'JavaScript',], link: 'https://weather-omega-wine.vercel.app/', git: 'https://github.com/Mostafa3ta/Weather', img: '/weather.png', description: 'Real-time weather application using OpenWeather API. Features location-based forecasts, dynamic UI updates, and responsive design showcasing API integration skills.' },
+export const Work: WorkProps[] = [
+    {
+        name: 'Elevent',
+        featured: true,
+        tagline: 'Live event-operations platform · Sole developer',
+        description: 'One platform for the whole vendor lifecycle at UAE and GCC events: onboarding and document checks, contracts, on-site operations, POS sales, reconciliation and payouts, with role-based portals for 7 user types.',
+        caseStudy: '/work/elevent',
+        link: 'https://elevent.ae/',
+        img: { src: '/ELEVENT-LOGO.png', width: 180, height: 27, contain: true },
+        techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI', 'PostgreSQL', 'Cloudflare'],
+    },
+    {
+        name: 'MedicaProf',
+        tagline: 'Production healthcare platform · Sole frontend developer',
+        description: 'A platform for patients and doctors. I built its appointment calendar with FullCalendar, its analytics dashboard with Apache ECharts, and the reusable components its screens are assembled from.',
+        link: 'https://medicaprof.com/en',
+        img: { src: '/MedicaProf.png', width: 353, height: 199 },
+        techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'HeroUI', 'FullCalendar', 'ECharts'],
+    },
 ]
+
+export const HowIWork = {
+    intro: 'I use AI to write code faster, not to think less. Every change goes through the same five steps, and nothing ships that I can’t explain.',
+    steps: [
+        { title: 'Spec', body: 'Write down what the feature does, who is allowed to do it and how it fails, before any code is generated. On Elevent, a living project-state document and a decisions log are where every session starts.' },
+        { title: 'Generate', body: 'Generate in small slices with Claude Code, plus Copilot for inline work: one feature or fix at a time, scoped to the spec.' },
+        { title: 'Review every line', body: 'Read the whole diff and check every “it’s done” against the source. If I can’t explain a line, it doesn’t ship.' },
+        { title: 'Test', body: 'Type-check and build gates and the test suite in CI, manual testing across devices at five screen widths, then testing rounds with the product owner.' },
+        { title: 'Ship and watch', body: 'A push to main runs CI and deploys the website; backend deploys take a database save point first, and every release has a one-step rollback. Uptime and backup monitors alert me.' },
+    ],
+    catches: [
+        'A CSRF check that accepted any token. Rebuilt it before launch as an origin check plus a real double-submit token.',
+        'An email client with no network timeout that could hang the daily reminder job and silently skip every later run. Replaced it with one that times out.',
+        '“Today” calculated in UTC, which let an expired licence pass eligibility checks for the first four hours of every UAE morning. All business dates now use Dubai time.',
+        'An N+1 query in the vendor-approval queue. Batching it cut the p95 response time from 1.36 s to 0.17 s.',
+    ],
+}
 
 export const Social = [
     { name: 'GitHub', link: CONTACT.github, icon: <FaGithub className='icon_link' /> },

@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
-import ProjectsPreview from '@/components/ProjectsPreview';
+import Work from '@/components/Work';
+import HowIWork from '@/components/HowIWork';
 import Experience from '@/components/Experience';
 import Socials from '@/components/Socials';
 import Skills from '@/components/Skills';
@@ -10,7 +11,8 @@ export {
     Nav,
     Socials,
     Experience,
-    ProjectsPreview,
+    Work,
+    HowIWork,
     Footer,
     Skills,
     ContactCTA,

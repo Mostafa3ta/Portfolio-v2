@@ -2,16 +2,15 @@ import {
   Experience,
   Footer,
   Hero,
+  HowIWork,
   Nav,
-  ProjectsPreview,
   Socials,
   Skills,
   ContactCTA,
+  Work,
 } from "@/components";
 import { CONTACT, SITE } from "@/constant/site";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -51,23 +50,11 @@ export default function Home() {
           <section id="skills" aria-labelledby="skills-heading" className="sections_style">
             <Skills />
           </section>
-          <section id="projects" aria-labelledby="projects-heading" className="sections_style">
-            <ProjectsPreview />
-            <div className="mt-12">
-              <Link
-                href="/projects"
-                className="inline-flex items-center leading-tight font-semibold text-slate-200 group"
-              >
-                <span>
-                  <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
-                    View All Projects{" "}
-                  </span>
-                  <span className="whitespace-nowrap">
-                    <FaArrowRightLong className="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none" />
-                  </span>
-                </span>
-              </Link>
-            </div>
+          <section id="work" aria-labelledby="work-heading" className="sections_style">
+            <Work />
+          </section>
+          <section id="how-i-work" aria-labelledby="how-i-work-heading" className="sections_style">
+            <HowIWork />
           </section>
           <section id="contact" aria-labelledby="contact-heading">
             <ContactCTA />

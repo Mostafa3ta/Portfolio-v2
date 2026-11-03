@@ -4,13 +4,15 @@ export interface NavProps {
     id: string;
     label: string;
 }
-export interface ProjectProps {
+export interface WorkProps {
     name: string;
-    link: string;
+    tagline: string;
     description: string;
-    img: string;
+    link: string;
+    caseStudy?: string;
+    featured?: boolean;
+    img: { src: string; width: number; height: number; contain?: boolean };
     techs: string[];
-    isProduction?: boolean;
 }
 export interface ExperienceProps {
     title: string;
