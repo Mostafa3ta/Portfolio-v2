@@ -1,6 +1,8 @@
+import type { IconType } from "react-icons";
+
 export interface NavProps {
-    name: string;
-    link: string;
+    id: string;
+    label: string;
 }
 export interface ProjectProps {
     name: string;
@@ -17,8 +19,12 @@ export interface ExperienceProps {
     to: string;
     link: string;
     description: string[];
-    city: string;
+    location: string;
     techs: string[];
+}
+export interface SkillGroupProps {
+    label: string;
+    skills: { name: string; icon: IconType }[];
 }
 export interface SocilasProps {
     name: string;

@@ -14,7 +14,11 @@ const config: Config = {
       },
       fontFamily:{
         Josefin: 'var(--font-josefin-sans)'
-      }
+      },
+      screens: {
+        // Desktop screens tall enough for the whole intro column to stay pinned.
+        tall: { raw: "(min-width: 1024px) and (min-height: 860px)" },
+      },
     },
   },
   plugins: [],

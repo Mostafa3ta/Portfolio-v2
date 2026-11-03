@@ -1,6 +1,7 @@
 import {
   Experience,
   Footer,
+  Hero,
   Nav,
   ProjectsPreview,
   Socials,
@@ -11,7 +12,6 @@ import { CONTACT, SITE } from "@/constant/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
-import { MdOutlineArrowOutward } from "react-icons/md";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -38,45 +38,20 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
       <div className="lg:flex lg:justify-between lg:gap-4">
-        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-fit lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-          <div>
-            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
-              <span className="bg-gradient-to-r from-slate-200 via-teal-200 to-slate-200 bg-clip-text text-transparent">
-                Mostafa Mahmoud
-              </span>
-            </h1>
-            <p className="mt-3 text-lg font-semibold tracking-tight text-slate-200 sm:text-xl">
-              <span className="whitespace-nowrap">Web Developer ·</span> <span className="whitespace-nowrap">QA Testing ·</span> <span className="whitespace-nowrap">Technical Support</span>
-            </p>
-            <p className="mt-2 text-sm text-slate-400">
-              <span className="whitespace-nowrap">Alexandria, Egypt ·</span> <span className="whitespace-nowrap">Open to international relocation ·</span> <span className="whitespace-nowrap">Available immediately</span>
-            </p>
-            <p className="mt-4 max-w-xs leading-normal text-slate-300">
-              Web developer with 3 years of experience shipping and maintaining <span className="text-teal-300 font-semibold">production</span> platforms end to end — building features, testing them across devices and browsers, and supporting live users. Comfortable across development, QA, and technical support work, with an AI-assisted workflow and rigorous human review.
-            </p>
-            <div className="mt-7">
-              <a
-                href="https://drive.google.com/file/d/1mp4K7hO4RgEgGsbUtZmDmMH8xlmPSFfo/view"
-                className="inline-flex items-center gap-2 rounded-lg bg-teal-400/10 px-4 py-2.5 leading-tight text-slate-200 hover:bg-teal-400/20 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base transition-all duration-300 border border-teal-400/20 hover:border-teal-400/40"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="View CV (opens in new tab)"
-              >
-                <span>View CV</span>
-                <MdOutlineArrowOutward className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-              </a>
-            </div>
-          </div>
+        <header className="lg:flex lg:w-1/2 lg:flex-col lg:self-start lg:py-16 tall:sticky tall:top-0 tall:h-screen tall:justify-between">
+          <Hero />
           <Nav />
           <Socials />
         </header>
 
-        <main id="content" tabIndex={-1} className="pt-24 focus:outline-none lg:w-1/2 lg:py-24">
+        <main id="content" tabIndex={-1} className="pt-24 focus:outline-none lg:w-1/2 lg:py-16">
           <section id="experience" aria-labelledby="experience-heading" className="sections_style">
             <Experience />
           </section>
-          <section id="projects" aria-labelledby="projects-heading" className="sections_style">
+          <section id="skills" aria-labelledby="skills-heading" className="sections_style">
             <Skills />
+          </section>
+          <section id="projects" aria-labelledby="projects-heading" className="sections_style">
             <ProjectsPreview />
             <div className="mt-12">
               <Link

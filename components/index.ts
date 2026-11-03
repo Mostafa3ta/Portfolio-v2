@@ -5,6 +5,7 @@ import Experience from '@/components/Experience';
 import Socials from '@/components/Socials';
 import Skills from '@/components/Skills';
 import ContactCTA from '@/components/ContactCTA';
+import Hero from '@/components/Hero';
 export {
     Nav,
     Socials,
@@ -13,4 +14,5 @@ export {
     Footer,
     Skills,
     ContactCTA,
+    Hero,
 }
