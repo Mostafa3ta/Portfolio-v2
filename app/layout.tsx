@@ -52,6 +52,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${arima.variable} bg-slate-900 leading-relaxed text-slate-400 selection:bg-teal-300 selection:text-teal-900 antialiased`}>
+        {/* Without JavaScript, scroll reveals never fire, so show their content straight away. */}
+        <noscript dangerouslySetInnerHTML={{ __html: "<style>.reveal{opacity:1;transform:none}</style>" }} />
         <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-teal-300 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-900">
           Skip to content
         </a>
