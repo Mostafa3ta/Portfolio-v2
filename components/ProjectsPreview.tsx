@@ -1,3 +1,5 @@
+'use client'
+
 import { MyProjects } from '@/constant'
 import React from 'react'
 import { MdOutlineArrowOutward } from 'react-icons/md'
@@ -9,11 +11,11 @@ import { motion } from 'framer-motion'
 
 export default function ProjectsPreview() {
   return (<>
-    <StickyTitle title='Projects' />
+    <StickyTitle title='Projects' id='projects-heading' />
     <div>
       <ul className="group/list">
         {MyProjects
-          .filter((item, index) => index < 3)
+          .filter((item, index) => index < 2)
           .map((project, index) =>
             <motion.li 
               key={index} 

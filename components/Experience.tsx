@@ -1,3 +1,5 @@
+'use client'
+
 import { Experiences } from '@/constant'
 import React from 'react'
 import { MdOutlineArrowOutward } from 'react-icons/md'
@@ -7,7 +9,7 @@ import { motion } from 'framer-motion'
 
 export default function Experience() {
   return (<>
-    <StickyTitle title='Experience' />
+    <StickyTitle title='Experience' id='experience-heading' />
     <div>
       <ol className="group/list">
         {Experiences.map((item, index) =>

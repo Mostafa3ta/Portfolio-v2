@@ -71,7 +71,7 @@ export default function Skills() {
         <FaCode className="text-teal-400" />
         Technical Skills
       </h3>
-          <StickyTitle title='Technical Skills' />
+          <StickyTitle title='Technical Skills' id='skills-heading' />
       <div className="space-y-8">
         {skillGroups.map((group) => (
           <div key={group.label}>

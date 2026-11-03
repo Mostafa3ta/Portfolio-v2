@@ -1,4 +1,3 @@
-"use client";
 import {
   Experience,
   Footer,
@@ -9,192 +8,75 @@ import {
   ContactCTA,
 } from "@/components";
 import Link from "next/link";
-import { useCallback, useEffect, useRef, useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineArrowOutward } from "react-icons/md";
-import { motion } from "framer-motion";
-
-type SectionId =  "experience" | "projects" | "contact";
 
 export default function Home() {
-  const [activeSection, setActiveSection] = useState("experience");
-
-  const observerRef = useRef<IntersectionObserver | null>(null);
-
-  // Use useCallback to memoize the handleIntersection function.
-  // This prevents it from being re-created on every render, which is good practice
-  // though not strictly necessary for an empty dependency array useEffect.
-  const handleIntersection = useCallback(
-    (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // We know entry.target.id will be one of our SectionId types
-          // as we filter for them, but a type assertion can make it explicit
-          setActiveSection(entry.target.id as SectionId);
-        }
-      });
-    },
-    [],
-  ); // No dependencies, so this function is created once
-
-  useEffect(() => {
-    const sectionIds: SectionId[] = [
-      "experience",
-      "projects",
-      "contact",
-    ];
-
-    // Get elements and filter out any nulls
-    const sections: HTMLElement[] = sectionIds
-      .map((id) => document.getElementById(id))
-      .filter((el): el is HTMLElement => el !== null); // Type guard to ensure el is HTMLElement
-
-    // If no sections are found, log a warning and exit
-    if (sections.length === 0) {
-      console.warn(
-        "No observable sections found. Ensure IDs 'experience', 'projects', and 'contact' exist in the DOM.",
-      );
-      return;
-    }
-
-    const observerOptions: IntersectionObserverInit = {
-      root: null, // Defaults to the viewport
-      rootMargin: "0px",
-      threshold: 0.2,
-    };
-
-    // Create a new IntersectionObserver instance
-    const observer = new IntersectionObserver(
-      handleIntersection,
-      observerOptions,
-    );
-
-    // Store the observer instance in the ref
-    observerRef.current = observer;
-
-    // Observe each found section
-    sections.forEach((section) => {
-      observer.observe(section);
-    });
-
-    // Cleanup function: disconnect the observer when the component unmounts
-    return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
-    };
-  }, [handleIntersection]);
-
   return (
-    <>
-      <div className="mx-auto min-h-screen max-w-screen-xl Josefin px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
-          <div className="lg:sticky lg:top-0 lg:flex lg:max-h-fit lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
-            <div>
-              <motion.h1
-                className="text-4xl font-bold tracking-tight sm:text-5xl"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
+    <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <div className="lg:flex lg:justify-between lg:gap-4">
+        <header className="lg:sticky lg:top-0 lg:flex lg:max-h-fit lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+          <div>
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
+              <span className="bg-gradient-to-r from-slate-200 via-teal-200 to-slate-200 bg-clip-text text-transparent">
+                Mostafa Mahmoud
+              </span>
+            </h1>
+            <p className="mt-3 text-lg font-semibold tracking-tight text-slate-200 sm:text-xl">
+              <span className="whitespace-nowrap">Web Developer ·</span> <span className="whitespace-nowrap">QA Testing ·</span> <span className="whitespace-nowrap">Technical Support</span>
+            </p>
+            <p className="mt-2 text-sm text-slate-400">
+              <span className="whitespace-nowrap">Alexandria, Egypt ·</span> <span className="whitespace-nowrap">Open to international relocation ·</span> <span className="whitespace-nowrap">Available immediately</span>
+            </p>
+            <p className="mt-4 max-w-xs leading-normal text-slate-300">
+              Web developer with 3 years of experience shipping and maintaining <span className="text-teal-300 font-semibold">production</span> platforms end to end — building features, testing them across devices and browsers, and supporting live users. Comfortable across development, QA, and technical support work, with an AI-assisted workflow and rigorous human review.
+            </p>
+            <div className="mt-7">
+              <a
+                href="https://drive.google.com/file/d/1mp4K7hO4RgEgGsbUtZmDmMH8xlmPSFfo/view"
+                className="inline-flex items-center gap-2 rounded-lg bg-teal-400/10 px-4 py-2.5 leading-tight text-slate-200 hover:bg-teal-400/20 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base transition-all duration-300 border border-teal-400/20 hover:border-teal-400/40"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View CV (opens in new tab)"
               >
-                <span className="bg-gradient-to-r from-slate-200 via-teal-200 to-slate-200 bg-clip-text text-transparent">
-                  Mostafa Mahmoud
-                </span>
-              </motion.h1>
-              <motion.h2
-                className="mt-3 text-lg font-semibold tracking-tight text-slate-200 sm:text-xl"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-              >
-               <span className="whitespace-nowrap">Web Developer ·</span> <span className="whitespace-nowrap">QA Testing ·</span> <span className="whitespace-nowrap">Technical Support</span>
-              </motion.h2>
-              <motion.p
-                className="mt-2 text-sm text-slate-500"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.15 }}
-              >
-                <span className="whitespace-nowrap">Alexandria, Egypt ·</span> <span className="whitespace-nowrap">Open to international relocation ·</span> <span className="whitespace-nowrap">Available immediately</span>
-              </motion.p>
-              <motion.p
-                className="mt-4 max-w-xs leading-normal text-slate-300"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-              >
-                Web developer with 3 years of experience shipping and maintaining <span className="text-teal-300 font-semibold">production</span> platforms end to end — building features, testing them across devices and browsers, and supporting live users. Comfortable across development, QA, and technical support work, with an AI-assisted workflow and rigorous human review.
-              </motion.p>
-              <motion.div
-                className="mt-7"
-                initial={{ opacity: 0, x: -30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    href="https://drive.google.com/file/d/1mp4K7hO4RgEgGsbUtZmDmMH8xlmPSFfo/view"
-                    className="inline-flex items-center gap-2 rounded-lg bg-teal-400/10 px-4 py-2.5 leading-tight text-slate-200 hover:bg-teal-400/20 hover:text-teal-300 focus-visible:text-teal-300 font-semibold group/link text-base transition-all duration-300 border border-teal-400/20 hover:border-teal-400/40"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label="View CV (opens in new tab)"
-                  >
-                    <span>View CV</span>
-                    <MdOutlineArrowOutward className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-                  </Link>
-                </motion.div>
-              </motion.div>
+                <span>View CV</span>
+                <MdOutlineArrowOutward className="h-4 w-4 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
+              </a>
             </div>
-            <Nav activeSection={activeSection} />
-            <Socials />
           </div>
+          <Nav />
+          <Socials />
+        </header>
 
-          <div className="pt-24 lg:w-1/2 lg:py-24">
-            <div id="experience" className="sections_style">
-              <Experience />
-            </div>
-            <div id="projects" className="sections_style">
-              <Skills />
-              <ProjectsPreview />
-              <motion.div
-                className="mt-12"
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.45, delay: 0.28 }}
+        <main id="content" tabIndex={-1} className="pt-24 focus:outline-none lg:w-1/2 lg:py-24">
+          <section id="experience" aria-labelledby="experience-heading" className="sections_style">
+            <Experience />
+          </section>
+          <section id="projects" aria-labelledby="projects-heading" className="sections_style">
+            <Skills />
+            <ProjectsPreview />
+            <div className="mt-12">
+              <Link
+                href="/projects"
+                className="inline-flex items-center leading-tight font-semibold text-slate-200 group"
               >
-                <Link
-                  href="/projects"
-                  className="inline-flex items-center leading-tight font-semibold text-slate-200 group"
-                >
-                  <span>
-                    <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
-                      View All Projects{" "}
-                    </span>
-                    <span className="whitespace-nowrap">
-                      <FaArrowRightLong className="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none" />
-                    </span>
+                <span>
+                  <span className="border-b border-transparent pb-px transition group-hover:border-teal-300 motion-reduce:transition-none">
+                    View All Projects{" "}
                   </span>
-                </Link>
-              </motion.div>
+                  <span className="whitespace-nowrap">
+                    <FaArrowRightLong className="ml-1 inline-block h-4 w-4 shrink-0 -translate-y-px transition-transform group-hover:translate-x-2 group-focus-visible:translate-x-2 motion-reduce:transition-none" />
+                  </span>
+                </span>
+              </Link>
             </div>
-            <div id="contact">
-              <ContactCTA />
-            </div>
-            <motion.div
-              initial={{ opacity: 0, y: 8 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.45, delay: 0.32 }}
-            >
-              <Footer />
-            </motion.div>
-          </div>
-        </div>
+          </section>
+          <section id="contact" aria-labelledby="contact-heading">
+            <ContactCTA />
+          </section>
+          <Footer />
+        </main>
       </div>
-    </>
+    </div>
   );
 }

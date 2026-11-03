@@ -3,9 +3,9 @@ import { ImMail, ImMail4 } from "react-icons/im"
 import { IoLogoWhatsapp } from "react-icons/io"
 
 export const NavItems = [
-    { name: 'experience', link: '#experience' },
-    { name: 'projects', link: '#projects' },
-    { name: 'contact', link: '#contact' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'contact', label: 'Contact' },
 ]
 
 export const MyProjects = [

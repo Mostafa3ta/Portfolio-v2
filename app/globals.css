@@ -149,9 +149,11 @@ body::before {
   }
 }
 
-/* Smooth Scroll Behavior */
-html {
-  scroll-behavior: smooth;
+/* Smooth Scroll Behavior (skipped when the visitor asks for reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Enhanced Focus States */
@@ -166,8 +168,10 @@ html {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card:hover {
-  transform: translateY(-2px);
+@media (prefers-reduced-motion: no-preference) {
+  .project-card:hover {
+    transform: translateY(-2px);
+  }
 }
 
 /* Gradient Text Effect */

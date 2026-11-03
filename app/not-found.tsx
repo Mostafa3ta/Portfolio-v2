@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 
 export default function NotFound() {
     return (
-        <div className='min-h-screen bg-slate-900 text-slate-400 flex items-center justify-center px-6'>
+        <main id='content' className='min-h-screen bg-slate-900 text-slate-400 flex items-center justify-center px-6'>
             <motion.div 
                 className='max-w-md w-full text-center'
                 initial={{ opacity: 0, y: 20 }}
@@ -51,6 +51,6 @@ export default function NotFound() {
                     <p>Lost? Let me help you find your way.</p>
                 </motion.div>
             </motion.div>
-        </div>
+        </main>
     )
 }

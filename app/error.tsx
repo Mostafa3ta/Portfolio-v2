@@ -13,7 +13,7 @@ export default function Error({
   reset: () => void
 }) {
   return (
-    <div className="min-h-screen bg-slate-900 flex items-center justify-center px-6">
+    <main id="content" className="min-h-screen bg-slate-900 flex items-center justify-center px-6">
       <motion.div 
         className="max-w-md w-full text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -67,6 +67,6 @@ export default function Error({
           <p>If the problem persists, please contact me.</p>
         </motion.div>
       </motion.div>
-    </div>
+    </main>
   )
 }

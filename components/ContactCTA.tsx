@@ -21,7 +21,7 @@ export default function ContactCTA() {
         <div className="absolute top-0 right-0 w-64 h-64 bg-teal-400/10 rounded-full blur-3xl pointer-events-none"></div>
         
         <div className="relative z-10">
-          <motion.h3 
+          <motion.h3 id="contact-heading"
             className="text-3xl md:text-4xl font-bold text-slate-200 mb-3"
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

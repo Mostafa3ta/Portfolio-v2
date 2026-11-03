@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import { Arima } from "next/font/google";
 import "./globals.css";
 
-const JosefinSans = Arima({
+// Arima is a variable font: one file covers every weight.
+const arima = Arima({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700'],
   variable: "--font-josefin-sans",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
@@ -43,8 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ scrollBehavior: 'smooth' }} className="scroll-smooth">
-      <body className={`${JosefinSans.variable} bg-slate-900 leading-relaxed text-slate-400 selection:bg-teal-300 selection:text-teal-900 antialiased`}>
+    <html lang="en">
+      <body className={`${arima.variable} bg-slate-900 leading-relaxed text-slate-400 selection:bg-teal-300 selection:text-teal-900 antialiased`}>
+        <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-teal-300 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-900">
+          Skip to content
+        </a>
         <div className="font-Josefin layoutDiv">
           {children}
         </div>
