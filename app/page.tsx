@@ -7,13 +7,36 @@ import {
   Skills,
   ContactCTA,
 } from "@/components";
+import { CONTACT, SITE } from "@/constant/site";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { MdOutlineArrowOutward } from "react-icons/md";
 
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: SITE.name,
+  jobTitle: SITE.jobTitle,
+  url: SITE.url,
+  email: `mailto:${CONTACT.email}`,
+  address: { "@type": "PostalAddress", addressLocality: "Alexandria", addressCountry: "EG" },
+  sameAs: [CONTACT.linkedin, CONTACT.github],
+  knowsAbout: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Web accessibility", "Web performance"],
+  knowsLanguage: ["ar", "en"],
+};
+
 export default function Home() {
   return (
     <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
       <div className="lg:flex lg:justify-between lg:gap-4">
         <header className="lg:sticky lg:top-0 lg:flex lg:max-h-fit lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
           <div>

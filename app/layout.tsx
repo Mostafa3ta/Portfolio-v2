@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Arima } from "next/font/google";
+import { SITE } from "@/constant/site";
 import "./globals.css";
 
 // Arima is a variable font: one file covers every weight.
@@ -10,31 +11,36 @@ const arima = Arima({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
+    default: SITE.title,
     template: "%s | Mostafa Mahmoud"
   },
-  description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
-  keywords: ["Frontend Developer", "React Developer", "Next.js Developer", "TypeScript", "Web Developer", "JavaScript", "Tailwind CSS", "Mostafa Mahmoud", "QA Tester", "Manual Testing", "Technical Support", "IT Support", "Web Developer UAE", "Web Developer Dubai", "Arabic English"],
-  authors: [{ name: "Mostafa Mahmoud" }],
-  creator: "Mostafa Mahmoud",
+  description: SITE.description,
+  keywords: SITE.keywords,
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-v2-7p0.pages.dev",
-    title: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
-    description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
-    siteName: "Mostafa Mahmoud Portfolio",
+    url: "/",
+    title: SITE.title,
+    description: SITE.description,
+    siteName: SITE.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
-    description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
+    title: SITE.title,
+    description: SITE.description,
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0f172a",
 };
 
 
