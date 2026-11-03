@@ -64,7 +64,7 @@ body::before {
 }
 
 .footer_links {
-  @apply font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300
+  @apply font-medium text-slate-200 underline decoration-slate-500 underline-offset-2 hover:text-teal-300 focus-visible:text-teal-300
 }
 
 .th_style {

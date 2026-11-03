@@ -1,98 +1,66 @@
-'use client'
-
+import { CONTACT } from '@/constant'
 import React from 'react'
-import { motion } from 'framer-motion'
-import Link from 'next/link'
-import { MdEmail } from 'react-icons/md'
-import { FaLinkedin, FaGithub, FaWhatsapp } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/fa'
+import { MdDescription, MdEmail } from 'react-icons/md'
+import Reveal from './Reveal'
+import StickyTitle from './StickyTitle'
+
+const secondary = "inline-flex items-center gap-2 rounded-lg border border-slate-600 bg-slate-800 px-5 py-3 font-semibold text-slate-200 transition-colors duration-300 hover:border-slate-500 hover:bg-slate-700"
 
 export default function ContactCTA() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.5 }}
-      className="mt-20 lg:scroll-mt-24 scroll-mt-16 mb-16"
-    >
-      <div className="relative rounded-2xl bg-gradient-to-br from-slate-800/50 to-slate-900/50 border border-slate-700/50 p-8 md:p-12 overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-400/5 to-transparent pointer-events-none"></div>
-        <div className="absolute top-0 right-0 w-64 h-64 bg-teal-400/10 rounded-full blur-3xl pointer-events-none"></div>
-        
+  return (<>
+    <StickyTitle title='Contact' id='contact-heading' />
+    <Reveal className="mb-16">
+      <div className="relative overflow-hidden rounded-2xl border border-slate-700/50 bg-gradient-to-br from-slate-800/50 to-slate-900/50 p-6 sm:p-8 md:p-12">
+        <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-br from-teal-400/5 to-transparent"></div>
+        <div aria-hidden className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-teal-400/10 blur-3xl"></div>
+
         <div className="relative z-10">
-          <motion.h3 id="contact-heading"
-            className="text-3xl md:text-4xl font-bold text-slate-200 mb-3"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            Let's Work Together
-          </motion.h3>
-          <motion.p 
-            className="text-slate-400 text-lg mb-6 max-w-2xl"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.3 }}
-          >
-            I'm available immediately for full-time roles — development, QA, or technical
-            support — on-site internationally or remote. Reach out on WhatsApp or email.
-          </motion.p>
-          
-          <motion.div 
-            className="flex flex-wrap gap-4"
-            initial={{ opacity: 0, y: 10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.4 }}
-          >
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="mailto:m2ostafa2000@gmail.com"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-teal-400/10 hover:bg-teal-400/20 border border-teal-400/50 hover:border-teal-400 rounded-lg text-teal-300 font-semibold transition-all duration-300"
-              >
-                <MdEmail className="text-xl" />
-                Get In Touch
-              </Link>
-            </motion.div>
+          <h3 className="mb-3 text-3xl font-bold text-slate-200 md:text-4xl">Let’s talk</h3>
+          <p className="mb-6 max-w-2xl text-lg text-slate-300">
+            I’m open to frontend roles in Alexandria or Cairo (hybrid or on-site) and to remote roles.
+          </p>
+          <p className="mb-6 text-sm text-slate-400">
+            Email me at{' '}
+            <a href={`mailto:${CONTACT.email}`} className="font-medium text-teal-300 underline decoration-teal-300/40 underline-offset-2 hover:text-teal-200">
+              {CONTACT.email}
+            </a>
+          </p>
 
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="https://wa.me/201206856251"
-                target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-slate-500 rounded-lg text-slate-200 font-semibold transition-all duration-300"
-              >
-                <FaWhatsapp className="text-xl" />
-                WhatsApp
-              </Link>
-            </motion.div>
-
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="https://www.linkedin.com/in/mostafa-mahmoud-33a1542b0"
-                target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-slate-500 rounded-lg text-slate-200 font-semibold transition-all duration-300"
-              >
-                <FaLinkedin className="text-xl" />
-                LinkedIn
-              </Link>
-            </motion.div>
-            
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <Link
-                href="https://github.com/Mostafa3ta"
-                target="_blank"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800 hover:bg-slate-700 border border-slate-600 hover:border-slate-500 rounded-lg text-slate-200 font-semibold transition-all duration-300"
-              >
-                <FaGithub className="text-xl" />
-                GitHub
-              </Link>
-            </motion.div>
-          </motion.div>
+          <ul className="flex flex-wrap gap-3" aria-label="Contact links">
+            <li>
+              <a href={`mailto:${CONTACT.email}`} className="inline-flex items-center gap-2 rounded-lg border border-teal-400/50 bg-teal-400/10 px-5 py-3 font-semibold text-teal-300 transition-colors duration-300 hover:border-teal-400 hover:bg-teal-400/20">
+                <MdEmail aria-hidden className="text-xl" />
+                Email
+              </a>
+            </li>
+            <li>
+              <a href={CONTACT.whatsapp} target="_blank" rel="noreferrer noopener" className={secondary}>
+                <FaWhatsapp aria-hidden className="text-xl" />
+                WhatsApp<span className="sr-only"> (opens in new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a href={CONTACT.linkedin} target="_blank" rel="noreferrer noopener" className={secondary}>
+                <FaLinkedin aria-hidden className="text-xl" />
+                LinkedIn<span className="sr-only"> (opens in new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a href={CONTACT.github} target="_blank" rel="noreferrer noopener" className={secondary}>
+                <FaGithub aria-hidden className="text-xl" />
+                GitHub<span className="sr-only"> (opens in new tab)</span>
+              </a>
+            </li>
+            <li>
+              <a href={CONTACT.cv} target="_blank" rel="noreferrer noopener" className={secondary}>
+                <MdDescription aria-hidden className="text-xl" />
+                CV<span className="sr-only"> (opens in new tab)</span>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
-    </motion.div>
-  )
+    </Reveal>
+  </>)
 }
