@@ -50,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className={`${arima.variable} bg-slate-900 leading-relaxed text-slate-400 selection:bg-teal-300 selection:text-teal-900 antialiased`}>
         {/* Without JavaScript, scroll reveals never fire, so show their content straight away. */}
         <noscript dangerouslySetInnerHTML={{ __html: "<style>.reveal{opacity:1;transform:none}</style>" }} />
