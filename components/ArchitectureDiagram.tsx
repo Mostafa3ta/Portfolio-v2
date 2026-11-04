@@ -19,10 +19,9 @@ export default function ArchitectureDiagram() {
       <title id="arch-title">Elevent architecture</title>
       <desc id="arch-desc">
         The web browser talks only to the Next.js app on Cloudflare Workers, which serves pages and proxies API calls with an
-        httpOnly session cookie and a CSRF check. The mobile app calls the API with a bearer token. Both reach the API through a
-        Cloudflare Tunnel, so the server has no public ports. On DigitalOcean, a FastAPI API and a background worker for
-        reminders and email run in Docker and use a managed PostgreSQL 16 database with point-in-time restore and nightly
-        encrypted off-site backups.
+        httpOnly session cookie and a CSRF check. The mobile app calls the API with a bearer token. Both reach the API over a
+        private connection. On DigitalOcean, a FastAPI API and a background worker for reminders and email run in Docker and
+        use a managed PostgreSQL database with automated backups.
       </desc>
       <defs>
         <marker id="arch-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
@@ -51,19 +50,19 @@ export default function ArchitectureDiagram() {
       <text x="24" y="199" {...sub} fill="#cbd5e1">• Auth proxy, httpOnly cookie</text>
       <text x="24" y="218" {...sub} fill="#cbd5e1">• CSRF: origin + token check</text>
 
-      {/* Mobile → tunnel */}
+      {/* Mobile → private connection */}
       <line x1="334" y1="64" x2="334" y2="250" {...arrow} />
       <text x="342" y="150" {...sub}>Bearer</text>
       <text x="342" y="165" {...sub}>token</text>
 
-      {/* Next.js app → tunnel */}
+      {/* Next.js app → private connection */}
       <line x1="134" y1="228" x2="134" y2="250" {...arrow} />
 
-      {/* Cloudflare Tunnel */}
+      {/* Private connection to the API */}
       <rect x="8" y="254" width="384" height="44" rx="10" {...accent} strokeDasharray="5 4" />
-      <text x="200" y="281" textAnchor="middle" {...sub} fill="#cbd5e1" fontSize={13}>Cloudflare Tunnel · API has no public ports</text>
+      <text x="200" y="281" textAnchor="middle" {...sub} fill="#cbd5e1" fontSize={13}>Private connection to the API</text>
 
-      {/* Tunnel → API */}
+      {/* Private connection → API */}
       <line x1="108" y1="298" x2="108" y2="366" {...arrow} />
 
       {/* DigitalOcean */}
@@ -84,15 +83,14 @@ export default function ArchitectureDiagram() {
 
       {/* Data */}
       <rect x="8" y="500" width="252" height="72" rx="10" {...box} />
-      <text x="134" y="529" textAnchor="middle" {...title}>PostgreSQL 16</text>
-      <text x="134" y="550" textAnchor="middle" {...sub}>Managed, point-in-time restore</text>
+      <text x="134" y="529" textAnchor="middle" {...title}>PostgreSQL</text>
+      <text x="134" y="550" textAnchor="middle" {...sub}>Managed database</text>
 
       <line x1="260" y1="536" x2="272" y2="536" {...arrow} />
 
       <rect x="276" y="500" width="116" height="72" rx="10" {...box} />
-      <text x="334" y="526" textAnchor="middle" {...title} fontSize={13}>Backups</text>
-      <text x="334" y="545" textAnchor="middle" {...sub}>Nightly, encrypted</text>
-      <text x="334" y="561" textAnchor="middle" {...sub}>off-site</text>
+      <text x="334" y="532" textAnchor="middle" {...title} fontSize={13}>Backups</text>
+      <text x="334" y="551" textAnchor="middle" {...sub}>Automated</text>
     </svg>
   )
 }

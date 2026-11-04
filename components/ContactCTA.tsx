@@ -18,7 +18,7 @@ export default function ContactCTA() {
         <div className="relative z-10">
           <h3 className="mb-3 text-3xl font-bold text-slate-200 md:text-4xl">Let’s talk</h3>
           <p className="mb-6 max-w-2xl text-lg text-slate-300">
-            I’m looking for frontend roles: remote, or on-site and hybrid in Egypt. I’m also happy to relocate, ideally to Europe.
+            I’m looking for frontend roles: remote, or on-site and hybrid in Egypt. I’m also open to relocating, including to the GCC or Europe.
           </p>
           <p className="mb-6 text-sm text-slate-400">
             Email me at{' '}

@@ -69,7 +69,7 @@ const decisions = [
 const results = [
   ["Oct 2026", "live in production"],
   ["120+", "pages in the web app"],
-  ["13 roles", "with 45 fine-grained permissions"],
+  ["7 user types", "13 roles and 45 fine-grained permissions"],
   ["< 200 ms", "p95 for interactive API endpoints"],
   ["1.36 s → 0.17 s", "vendor-approval queue after fixing an N+1 query"],
   ["700+", "automated tests run in CI on every push"],
@@ -152,8 +152,8 @@ export default function EleventCaseStudy() {
           <p className="leading-relaxed text-slate-400">
             Events bring in dozens of food trucks and kiosks, each with expiring licences, a contract, a POS terminal and sales
             to reconcile. Elevent replaces the spreadsheets with one platform, from vendor onboarding to payouts, with a portal
-            for each of its seven user types: vendors, event clients, organizers, food-safety auditors, finance, freelancers
-            and admins.
+            for each of its 7 user types (13 roles, 45 permissions): vendors, event clients, organizers, food-safety auditors,
+            finance, freelancers and admins.
           </p>
         </Section>
 
@@ -165,8 +165,7 @@ export default function EleventCaseStudy() {
             <figcaption className="mt-4">
               <ul className="space-y-2 text-sm leading-normal text-slate-400">
                 <li>The browser only talks to the Next.js app, which keeps the session in an httpOnly cookie and proxies every API call.</li>
-                <li>The API has no public ports; the web and mobile apps reach it through a Cloudflare Tunnel.</li>
-                <li>Daily backups with 7-day point-in-time restore, plus nightly encrypted off-site copies.</li>
+                <li>The API, a background worker for reminders and email, and the database run on DigitalOcean, with automated backups.</li>
               </ul>
             </figcaption>
           </figure>

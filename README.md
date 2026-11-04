@@ -47,6 +47,19 @@ npm run build   # production build
 
 Pushing to `master` deploys on Cloudflare Pages.
 
+## Tests
+
+```bash
+npm test             # unit and component tests (Vitest + React Testing Library)
+npm run test:watch   # re-run them on every save while you work
+npm run test:e2e     # end-to-end tests in a real browser (Playwright), against the dev server on :3000
+BASE_URL=https://portfolio-v2-7p0.pages.dev npm run test:e2e   # the same tests against the live site
+```
+
+- Unit and component tests sit next to the code they test (`*.test.ts` / `*.test.tsx`).
+- End-to-end tests live in `e2e/` and run on a desktop and a phone screen size.
+- On a new machine, install the browser once: `npx playwright install chromium`.
+
 ## Contact
 
 - **Email**: mostafa.mahmoud.frontend@gmail.com

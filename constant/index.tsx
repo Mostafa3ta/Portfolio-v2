@@ -83,9 +83,9 @@ export const Experiences: ExperienceProps[] = [
         link: 'https://elevent.ae/',
         description: [
             'Took a multi-role event-operations platform for UAE food, retail and catering events from first build to a production launch in October 2026, as its only developer.',
-            'Own the frontend end to end: 120+ pages with role-based portals for 7 user types driven by 45 permissions, a typed API client layer across 40+ domains, and a responsive system checked automatically at five screen widths.',
+            'Own the frontend end to end: 120+ pages with role-based portals for 7 user types (13 roles, 45 permissions), a typed API client layer across 40+ domains, and a responsive system checked automatically at five screen widths.',
             'Built the auth layer so tokens never reach JavaScript: a Next.js proxy with httpOnly cookies, CSRF protection and silent token refresh.',
-            'Shipped and operate the full product using AI-assisted development with my own review and testing: FastAPI and PostgreSQL backend, Cloudflare and DigitalOcean hosting, CI on every push, daily backups with 7-day point-in-time restore, and one-step rollback.',
+            'Shipped and operate the full product using AI-assisted development with my own review and testing: FastAPI and PostgreSQL backend, Cloudflare and DigitalOcean hosting, CI on every push, daily backups and one-step rollback.',
             'Ran structured testing rounds with the product owner and turned the feedback into tracked changes.',
         ],
         techs: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI', 'PostgreSQL', 'Cloudflare'],
@@ -157,7 +157,7 @@ export const SkillGroups: SkillGroupProps[] = [
         label: 'Languages',
         skills: [
             { name: 'Arabic (native)', icon: MdTranslate },
-            { name: 'English (professional)', icon: MdTranslate },
+            { name: 'English (professional working proficiency)', icon: MdTranslate },
         ],
     },
 ]
