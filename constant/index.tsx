@@ -18,13 +18,12 @@ export const NavItems = [
 
 export const Hero = {
     headline: 'Frontend Engineer',
-    stack: 'React · Next.js · TypeScript',
-    location: 'Alexandria, Egypt',
-    pitch: 'I build fast, accessible React and Next.js products and take them all the way to production, most recently Elevent, a live event-operations platform I built and operate as its sole developer.',
+    location: 'Alexandria, Egypt · Open to relocation and remote work',
+    pitch: 'I build fast, accessible web products and take them all the way from first commit to production.',
     proofs: [
-        'Live production platform I operate',
+        'Sole developer of a live production platform',
         '3 years with React, Next.js and TypeScript',
-        'AI-native workflow with line-by-line review',
+        'AI-assisted workflow, every line reviewed',
     ],
 }
 
@@ -33,7 +32,7 @@ export const Work: WorkProps[] = [
         name: 'Elevent',
         featured: true,
         tagline: 'Live event-operations platform · Sole developer',
-        description: 'One platform for the whole vendor lifecycle at UAE and GCC events: onboarding and document checks, contracts, on-site operations, POS sales, reconciliation and payouts, with role-based portals for 7 user types.',
+        description: 'One platform for the whole vendor lifecycle at UAE and GCC events: onboarding and document checks, contracts, on-site operations, POS sales, reconciliation and payouts.',
         caseStudy: '/work/elevent',
         link: 'https://elevent.ae/',
         img: { src: '/ELEVENT-LOGO.png', width: 180, height: 27, contain: true },
@@ -41,8 +40,8 @@ export const Work: WorkProps[] = [
     },
     {
         name: 'MedicaProf',
-        tagline: 'Production healthcare platform · Sole frontend developer',
-        description: 'A platform for patients and doctors. I built its appointment calendar with FullCalendar, its analytics dashboard with Apache ECharts, and the reusable components its screens are assembled from.',
+        tagline: 'Production healthcare platform · Frontend developer',
+        description: 'Appointment scheduling and analytics dashboards for patients and doctors.',
         link: 'https://medicaprof.com/en',
         img: { src: '/MedicaProf.png', width: 353, height: 199 },
         techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'HeroUI', 'FullCalendar', 'ECharts'],
@@ -52,11 +51,11 @@ export const Work: WorkProps[] = [
 export const HowIWork = {
     intro: 'I use AI to write code faster, not to think less. Every change goes through the same five steps, and nothing ships that I can’t explain.',
     steps: [
-        { title: 'Spec', body: 'Write down what the feature does, who is allowed to do it and how it fails, before any code is generated. On Elevent, a living project-state document and a decisions log are where every session starts.' },
+        { title: 'Spec', body: 'Write down what the feature does, who is allowed to do it and how it fails, before any code is generated. A living project-state document and a decisions log keep every session on track.' },
         { title: 'Generate', body: 'Generate in small slices with Claude Code, plus Copilot for inline work: one feature or fix at a time, scoped to the spec.' },
         { title: 'Review every line', body: 'Read the whole diff and check every “it’s done” against the source. If I can’t explain a line, it doesn’t ship.' },
-        { title: 'Test', body: 'Type-check and build gates and the test suite in CI, manual testing across devices at five screen widths, then testing rounds with the product owner.' },
-        { title: 'Ship and watch', body: 'A push to main runs CI and deploys the website; backend deploys take a database save point first, and every release has a one-step rollback. Uptime and backup monitors alert me.' },
+        { title: 'Test', body: 'Type-check and build gates and the test suite in CI, manual testing across devices at five screen widths, then acceptance testing with stakeholders before release.' },
+        { title: 'Ship and watch', body: 'Every push runs CI and deploys automatically, every release can be rolled back in one step, and monitoring alerts me when something breaks.' },
     ],
     catches: [
         'A CSRF check that accepted any token. Rebuilt it before launch as an origin check plus a real double-submit token.',
@@ -71,13 +70,14 @@ export const Social = [
     { name: 'LinkedIn', link: CONTACT.linkedin, icon: <FaLinkedin className='icon_link' /> },
     { name: 'Email', link: `mailto:${CONTACT.email}`, icon: <ImMail4 className='icon_link' /> },
     { name: 'WhatsApp', link: CONTACT.whatsapp, icon: <IoLogoWhatsapp className='icon_link' /> },
+
 ]
 
 // Newest first.
 export const Experiences: ExperienceProps[] = [
     {
         company: 'Elevent',
-        title: 'Frontend Engineer · Sole Developer',
+        title: 'Frontend Engineer (Sole Developer)',
         from: 'Jan 2026', to: 'Present',
         location: 'Remote · UAE',
         link: 'https://elevent.ae/',
@@ -86,7 +86,7 @@ export const Experiences: ExperienceProps[] = [
             'Own the frontend end to end: 120+ pages with role-based portals for 7 user types driven by 45 permissions, a typed API client layer across 40+ domains, and a responsive system checked automatically at five screen widths.',
             'Built the auth layer so tokens never reach JavaScript: a Next.js proxy with httpOnly cookies, CSRF protection and silent token refresh.',
             'Shipped and operate the full product using AI-assisted development with my own review and testing: FastAPI and PostgreSQL backend, Cloudflare and DigitalOcean hosting, CI on every push, daily backups with 7-day point-in-time restore, and one-step rollback.',
-            'Ran structured testing rounds with the product owner: 99 change requests across 4 rounds, each tracked by ID.',
+            'Ran structured testing rounds with the product owner and turned the feedback into tracked changes.',
         ],
         techs: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI', 'PostgreSQL', 'Cloudflare'],
     },
@@ -97,8 +97,8 @@ export const Experiences: ExperienceProps[] = [
         location: 'Remote · France',
         link: 'https://www.linkedin.com/company/medicaprof/',
         description: [
-            'Sole frontend developer on a production healthcare platform for patients and doctors, built with Next.js, TypeScript and HeroUI.',
-            'Built the appointment calendar with FullCalendar and the analytics dashboard with Apache ECharts.',
+            'Frontend developer in a small cross-functional team (web, backend and mobile) building a production healthcare platform for patients and doctors with Next.js, TypeScript and HeroUI.',
+            'Built the appointment calendar with FullCalendar and the analytics dashboard with Apache ECharts, the platform’s most complex features.',
             'Built the reusable component library the platform’s screens are assembled from.',
         ],
         techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'HeroUI', 'FullCalendar', 'ECharts'],
@@ -150,7 +150,7 @@ export const SkillGroups: SkillGroupProps[] = [
             { name: 'Manual & cross-device testing', icon: MdDevices },
             { name: 'REST & GraphQL APIs', icon: SiGraphql },
             { name: 'Deploys on Vercel & Cloudflare', icon: SiCloudflare },
-            { name: 'AI-assisted development with review', icon: MdAutoAwesome },
+            { name: 'AI-assisted development (Claude Code, Copilot)', icon: MdAutoAwesome },
         ],
     },
     {

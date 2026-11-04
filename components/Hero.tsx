@@ -13,7 +13,6 @@ export default function Hero() {
             </h1>
             <p className="mt-3 text-lg font-semibold tracking-tight text-slate-200 sm:text-xl">
                 {HeroContent.headline}
-                <span className="mt-1 block text-base font-medium text-teal-300 sm:text-lg">{HeroContent.stack}</span>
             </p>
             <p className="mt-2 text-sm text-slate-400">{HeroContent.location}</p>
             <p className="mt-4 max-w-sm leading-normal text-slate-300">{HeroContent.pitch}</p>

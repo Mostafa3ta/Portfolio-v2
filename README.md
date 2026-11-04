@@ -35,7 +35,7 @@ next.config.mjs           # redirects: /cv → Google Drive CV, /projects → /#
 - **Text on the home page**: `constant/index.tsx`.
 - **Domain, title, description, contact links**: `constant/site.ts`. Canonical URLs, the sitemap, robots and the OG image all read from it.
 - **CV**: the site only links to `/cv`; the Google Drive URL lives in `next.config.mjs`. The redirect is temporary (307) on purpose, so swapping the file never gets stuck in browser caches.
-- **Case study**: `app/work/elevent/page.tsx`. Screenshots and usage metrics are placeholders until the client approves them.
+- **Case study**: `app/work/elevent/page.tsx`.
 
 ## Develop and deploy
 
@@ -49,6 +49,6 @@ Pushing to `master` deploys on Cloudflare Pages.
 
 ## Contact
 
-- **Email**: m2ostafa2000@gmail.com
+- **Email**: mostafa.mahmoud.frontend@gmail.com
 - **LinkedIn**: [mostafa-m-dev](https://www.linkedin.com/in/mostafa-m-dev)
 - **GitHub**: [Mostafa3ta](https://github.com/Mostafa3ta)

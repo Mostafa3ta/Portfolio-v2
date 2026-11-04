@@ -22,7 +22,7 @@ export const SITE = {
 }
 
 export const CONTACT = {
-    email: 'm2ostafa2000@gmail.com',
+    email: 'mostafa.mahmoud.frontend@gmail.com',
     whatsapp: 'https://wa.me/201206856251',
     linkedin: 'https://www.linkedin.com/in/mostafa-m-dev',
     github: 'https://github.com/Mostafa3ta',
