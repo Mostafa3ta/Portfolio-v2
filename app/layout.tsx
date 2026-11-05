@@ -1,39 +1,46 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Arima } from "next/font/google";
+import { SITE } from "@/constant/site";
 import "./globals.css";
 
-const JosefinSans = Arima({
+// Arima is a variable font: one file covers every weight.
+const arima = Arima({
   subsets: ['latin'],
-  weight: ['100', '200', '300', '400', '500', '600', '700'],
   variable: "--font-josefin-sans",
+  display: 'swap',
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
   title: {
-    default: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
+    default: SITE.title,
     template: "%s | Mostafa Mahmoud"
   },
-  description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
-  keywords: ["Frontend Developer", "React Developer", "Next.js Developer", "TypeScript", "Web Developer", "JavaScript", "Tailwind CSS", "Mostafa Mahmoud", "QA Tester", "Manual Testing", "Technical Support", "IT Support", "Web Developer UAE", "Web Developer Dubai", "Arabic English"],
-  authors: [{ name: "Mostafa Mahmoud" }],
-  creator: "Mostafa Mahmoud",
+  description: SITE.description,
+  keywords: SITE.keywords,
+  authors: [{ name: SITE.name, url: SITE.url }],
+  creator: SITE.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://portfolio-v2-7p0.pages.dev",
-    title: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
-    description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
-    siteName: "Mostafa Mahmoud Portfolio",
+    url: "/",
+    title: SITE.title,
+    description: SITE.description,
+    siteName: SITE.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mostafa Mahmoud | Web Developer & QA / Technical Support",
-    description: "Web developer with production experience building, testing, and supporting live platforms. Open to development, QA testing, technical support, and IT roles. Arabic & English. Open to international relocation — available immediately.",
+    title: SITE.title,
+    description: SITE.description,
   },
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0f172a",
 };
 
 
@@ -43,8 +50,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" style={{ scrollBehavior: 'smooth' }} className="scroll-smooth">
-      <body className={`${JosefinSans.variable} bg-slate-900 leading-relaxed text-slate-400 selection:bg-teal-300 selection:text-teal-900 antialiased`}>
+    <html lang="en" data-scroll-behavior="smooth">
+      <body className={`${arima.variable} bg-slate-900 leading-relaxed text-slate-400 selection:bg-teal-300 selection:text-teal-900 antialiased`}>
+        {/* Without JavaScript, scroll reveals never fire, so show their content straight away. */}
+        <noscript dangerouslySetInnerHTML={{ __html: "<style>.reveal{opacity:1;transform:none}</style>" }} />
+        <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-teal-300 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-slate-900">
+          Skip to content
+        </a>
         <div className="font-Josefin layoutDiv">
           {children}
         </div>

@@ -64,7 +64,7 @@ body::before {
 }
 
 .footer_links {
-  @apply font-medium text-slate-400 hover:text-teal-300 focus-visible:text-teal-300
+  @apply font-medium text-slate-200 underline decoration-slate-500 underline-offset-2 hover:text-teal-300 focus-visible:text-teal-300
 }
 
 .th_style {
@@ -149,9 +149,11 @@ body::before {
   }
 }
 
-/* Smooth Scroll Behavior */
-html {
-  scroll-behavior: smooth;
+/* Smooth Scroll Behavior (skipped when the visitor asks for reduced motion) */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 /* Enhanced Focus States */
@@ -166,8 +168,29 @@ html {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.project-card:hover {
-  transform: translateY(-2px);
+@media (prefers-reduced-motion: no-preference) {
+  .project-card:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Scroll reveal (components/Reveal.tsx) */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.reveal-shown {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    transform: none;
+    transition: opacity 0.3s ease;
+  }
 }
 
 /* Gradient Text Effect */

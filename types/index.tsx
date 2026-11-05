@@ -1,14 +1,18 @@
+import type { IconType } from "react-icons";
+
 export interface NavProps {
-    name: string;
-    link: string;
+    id: string;
+    label: string;
 }
-export interface ProjectProps {
+export interface WorkProps {
     name: string;
-    link: string;
+    tagline: string;
     description: string;
-    img: string;
+    link: string;
+    caseStudy?: string;
+    featured?: boolean;
+    img: { src: string; width: number; height: number; contain?: boolean };
     techs: string[];
-    isProduction?: boolean;
 }
 export interface ExperienceProps {
     title: string;
@@ -17,8 +21,12 @@ export interface ExperienceProps {
     to: string;
     link: string;
     description: string[];
-    city: string;
+    location: string;
     techs: string[];
+}
+export interface SkillGroupProps {
+    label: string;
+    skills: { name: string; icon: IconType }[];
 }
 export interface SocilasProps {
     name: string;

@@ -1,82 +1,67 @@
-# Mostafa Mahmoud - Portfolio
+# Mostafa Mahmoud: Frontend Engineer portfolio
 
-A modern, professional portfolio website showcasing my experience, projects, and skills as a Frontend Developer. Built with Next.js 14, TypeScript, and Tailwind CSS.
+Personal site of a frontend engineer (React · Next.js · TypeScript), with a case study of
+[Elevent](https://elevent.ae/), a live event-operations platform I built and operate as its sole developer.
 
-## 🚀 Features
+Live: https://portfolio-v2-7p0.pages.dev
 
-- **Modern Design**: Clean, professional UI with smooth animations and transitions
-- **Framer Motion**: Fluid, performant animations with scroll-triggered effects
-- **Fully Responsive**: Optimized for all devices and screen sizes
-- **SEO Optimized**: Comprehensive metadata, Open Graph, and Twitter card support
-- **Performance**: Built with Next.js for optimal performance and fast loading times
-- **Accessibility**: WCAG compliant with proper ARIA labels and semantic HTML
-- **Interactive Elements**: Smooth scrolling, hover effects, and animated sections
-- **Dark Theme**: Eye-friendly dark color scheme with teal accents
-- **Error Handling**: Custom error and 404 pages with consistent branding
+## Stack
 
-## 🛠️ Tech Stack
+- **Next.js 15** (App Router), mostly Server Components; client code only for the section nav and scroll reveals
+- **TypeScript**, **Tailwind CSS**, **Framer Motion** (respects `prefers-reduced-motion`), **React Icons**
+- **Cloudflare Pages** via `@cloudflare/next-on-pages`. Every route is prerendered as static content.
+  `next-on-pages` supports Next.js up to 15.5.2, so don't upgrade Next past that without moving to OpenNext.
 
-- **Framework**: Next.js 14 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Icons**: React Icons
-- **Deployment**: Vercel
-
-## 🏗️ Project Structure
+## Structure
 
 ```
-portfolio-v2/
-├── app/              # Next.js app directory
-│   ├── layout.tsx    # Root layout with metadata
-│   ├── page.tsx      # Home page
-│   ├── projects/     # Projects page
-│   └── globals.css   # Global styles and animations
-├── components/       # React components
-│   ├── Experience.tsx
-│   ├── ProjectsPreview.tsx
-│   ├── Nav.tsx
-│   ├── Skills.tsx
-│   ├── Socials.tsx
-|   ├── Contanct.tsx
-│   └── Footer.tsx
-├── constant/         # Data and constants
-└── public/           # Static assets
+app/
+├── layout.tsx            # site-wide metadata (title, description, OG/Twitter), font, skip link
+├── page.tsx              # home: hero + Experience, Skills, Work, How I work, Contact; JSON-LD Person
+├── work/elevent/page.tsx # Elevent case study
+├── opengraph-image.tsx   # OG image generated with next/og at build time (twitter-image.tsx shares it)
+├── sitemap.ts, robots.ts
+└── not-found.tsx, error.tsx
+components/               # Hero, Nav, Experience, Skills, Work, HowIWork, ContactCTA, ArchitectureDiagram, ...
+constant/
+├── site.ts               # domain, title, description, keywords, contact links
+└── index.tsx             # page content: hero copy, experience, skills, work, "How I work"
+lib/og.tsx                # OG image layout
+next.config.mjs           # redirects: /cv → Google Drive CV, /projects → /#work
 ```
 
-## 🎨 Key Sections
+## Editing content
 
-- **Hero**: Introduction with resume link and navigation
-- **Experience**: Professional work history with detailed descriptions
-- **Skills**: Technical Skills
-- **Projects**: Featured projects with technologies and live links
-- **Contact**: Social media links and contact information
+- **Text on the home page**: `constant/index.tsx`.
+- **Domain, title, description, contact links**: `constant/site.ts`. Canonical URLs, the sitemap, robots and the OG image all read from it.
+- **CV**: the site only links to `/cv`; the Google Drive URL lives in `next.config.mjs`. The redirect is temporary (307) on purpose, so swapping the file never gets stuck in browser caches.
+- **Case study**: `app/work/elevent/page.tsx`.
 
-## 📱 Responsive Design
-
-The portfolio is fully responsive with breakpoints for:
-- Mobile (< 640px)
-- Tablet (640px - 1024px)
-- Desktop (> 1024px)
-
-## 🚀 Deployment
-
-This project is deployed on Vercel. Any push to the main branch automatically triggers a new deployment.
+## Develop and deploy
 
 ```bash
-npm run build
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # production build
 ```
 
-## 📄 License
+Pushing to `master` deploys on Cloudflare Pages.
 
-This project is open source and available for reference.
+## Tests
 
-## 📧 Contact
+```bash
+npm test             # unit and component tests (Vitest + React Testing Library)
+npm run test:watch   # re-run them on every save while you work
+npm run test:e2e     # end-to-end tests in a real browser (Playwright), against the dev server on :3000
+BASE_URL=https://portfolio-v2-7p0.pages.dev npm run test:e2e   # the same tests against the live site
+```
 
-- **Email**: m2ostafa2000@gmail.com
-- **LinkedIn**: [Mostafa Mahmoud](https://www.linkedin.com/in/mostafa-mahmoud-33a1542b0)
+- Unit and component tests sit next to the code they test (`*.test.ts` / `*.test.tsx`).
+- End-to-end tests live in `e2e/` and run on a desktop and a phone screen size.
+- On a new machine, install the browser once: `npx playwright install chromium`.
+
+## Contact
+
+- **Email**: mostafa.mahmoud.frontend@gmail.com
+- **LinkedIn**: [mostafa-m-dev](https://www.linkedin.com/in/mostafa-m-dev)
 - **GitHub**: [Mostafa3ta](https://github.com/Mostafa3ta)
-
----
-
-Built with ❤️ using Next.js and Tailwind CSS

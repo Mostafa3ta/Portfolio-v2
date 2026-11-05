@@ -1,78 +1,164 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa"
-import { ImMail, ImMail4 } from "react-icons/im"
+import { ImMail4 } from "react-icons/im"
 import { IoLogoWhatsapp } from "react-icons/io"
+import { MdAccessibilityNew, MdAutoAwesome, MdChecklist, MdDevices, MdSpeed, MdSyncAlt, MdTranslate } from "react-icons/md"
+import { SiCloudflare, SiGit, SiGraphql, SiNextdotjs, SiReact, SiRedux, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si"
+import type { ExperienceProps, SkillGroupProps, WorkProps } from "@/types"
+import { CONTACT } from "./site"
+
+export { SITE, CONTACT } from "./site"
 
 export const NavItems = [
-    { name: 'experience', link: '#experience' },
-    { name: 'projects', link: '#projects' },
-    { name: 'contact', link: '#contact' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'work', label: 'Work' },
+    { id: 'how-i-work', label: 'How I work' },
+    { id: 'contact', label: 'Contact' },
 ]
 
-export const MyProjects = [
-    { name: 'ELEVENT', date: 'Feb 2026', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'FastAPI', 'PostgreSQL', 'Cloudflare'], link: 'https://elevent.ae/', git: '', img: '/ELEVENT-LOGO.png', description: "Sole developer of a live event-operations platform for food, retail and catering events in the UAE, delivered end to end: web app, backend API, database and production deployment, with an iOS/Android app in progress. Runs the full vendor workflow, from onboarding and document checks through event applications, contracts, food-safety audits, sales reconciliation, invoicing and payouts, with role-based access for vendors, clients, auditors, finance and admins.", isProduction: true },
-    { name: 'MedicaProf', date: 'Apr 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Hero UI'], link: 'https://medicaprof.com/en', git: '', img: '/MedicaProf.png', description: "Developed and deployed core features for a live healthcare platform serving thousands of users. Built a fully functional appointment calendar system, interactive analytics dashboard with data visualizations, and reusable component architecture. Technologies: Next.js, TypeScript, Tailwind CSS.", isProduction: true },
-    { name: 'Movies & Shows', date: 'Feb 2025', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Shadcn UI'], link: 'https://movies-b8e.pages.dev/', git: 'https://github.com/Mostafa3ta/movies', img: '/movies.png', description: 'Full-stack movie discovery app leveraging TMDB API. Features advanced search filtering, responsive image galleries, and optimized data fetching with Next.js server components for enhanced performance.' },
-    // { name: 'Cars Rental', date: 'Jan 2024', techs: ['Next.js', 'Typescript', 'Tailwind CSS', 'Headless UI'], link: 'https://cars-five-chi.vercel.app/', git: 'https://github.com/Mostafa3ta/Cars-Rental', img: '/cars.png', description: 'Comprehensive car rental search platform using Tailwind CSS, TypeScript, and Headless UI. Utilized APIs from RapidAPI and API Ninjas to provide detailed car rental information.' },
-    { name: 'E-commerce', date: 'Jan 2024', techs: ['React.js', 'Redux', 'Bootstrap',], link: 'https://e-commerce-delta-one-33.vercel.app/', git: 'https://github.com/Mostafa3ta/E-commerce_React.js', img: '/e-commerce-4.png', description: 'Full-featured e-commerce platform with Redux state management, JWT authentication, and RESTful API integration. Implements shopping cart, product filtering, and secure user authentication.' },
-    { name: 'First Portfolio', date: 'Dec 2023', techs: ['HTML', 'CSS', 'JavaScript', 'Bootstrap',], link: 'https://portfolio-mu-sepia-68.vercel.app/', git: 'https://github.com/Mostafa3ta/Portfolio', img: '/profile-light.png', description: `Responsive personal portfolio showcasing web development fundamentals. Built with vanilla JavaScript, featuring smooth animations, dynamic content rendering, and mobile-first design using Bootstrap.` },
-    { name: 'Quiz App', date: 'Nov 2023', techs: ['React.js', 'Redux', 'MUI',], link: 'https://quiz-blond-gamma-63.vercel.app/', git: 'https://github.com/Mostafa3ta/Quiz-App', img: '/Quiz.png', description: 'Interactive quiz application with customizable settings (category, difficulty, question count). Integrated TriviaDB API with Redux for centralized state management and Material-UI for polished interface.' },
-    { name: 'To-Do App', date: 'Nov 2023', techs: ['React.js', 'Bootstrap',], link: 'https://todo-list-eta-cyan-49.vercel.app/', git: 'https://github.com/Mostafa3ta/Todo-List-App', img: '/ToDo-List.png', description: 'Task management application with full CRUD operations and local storage persistence. Features real-time updates, task filtering, and responsive design for optimal user experience.' },
-    { name: 'Bookmarker', date: 'Oct 2023', techs: ['HTML', 'CSS', 'JavaScript',], link: 'https://bookmarker-teal.vercel.app/', git: 'https://github.com/Mostafa3ta/Bookmarker', img: '/Bookmarker2.png', description: 'Bookmark manager with URL validation, local storage, and clean UI. Demonstrates proficiency in DOM manipulation, form handling, and client-side data persistence.' },
-    { name: 'Weather', date: 'Oct 2023', techs: ['HTML', 'CSS', 'JavaScript',], link: 'https://weather-omega-wine.vercel.app/', git: 'https://github.com/Mostafa3ta/Weather', img: '/weather.png', description: 'Real-time weather application using OpenWeather API. Features location-based forecasts, dynamic UI updates, and responsive design showcasing API integration skills.' },
-    // { name: 'Bakery', date: 'Sep 2023', techs: ['HTML', 'CSS',], link: ' ', git: 'https://github.com/Mostafa3ta/Bakery', img: '/bakery.png', description: '' },
+export const Hero = {
+    headline: 'Frontend Engineer',
+    location: 'Alexandria, Egypt · Open to relocation and remote work',
+    pitch: 'I build fast, accessible web products and take them all the way from first commit to production.',
+    proofs: [
+        'Sole developer of a live production platform',
+        '3 years with React, Next.js and TypeScript',
+        'AI-assisted workflow, every line reviewed',
+    ],
+}
+
+export const Work: WorkProps[] = [
+    {
+        name: 'Elevent',
+        featured: true,
+        tagline: 'Live event-operations platform · Sole developer',
+        description: 'One platform for the whole vendor lifecycle at UAE and GCC events: onboarding and document checks, contracts, on-site operations, POS sales, reconciliation and payouts.',
+        caseStudy: '/work/elevent',
+        link: 'https://elevent.ae/',
+        img: { src: '/ELEVENT-LOGO.png', width: 180, height: 27, contain: true },
+        techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI', 'PostgreSQL', 'Cloudflare'],
+    },
+    {
+        name: 'MedicaProf',
+        tagline: 'Production healthcare platform · Frontend developer',
+        description: 'Appointment scheduling and analytics dashboards for patients and doctors.',
+        link: 'https://medicaprof.com/en',
+        img: { src: '/MedicaProf.png', width: 353, height: 199 },
+        techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'HeroUI', 'FullCalendar', 'ECharts'],
+    },
 ]
+
+export const HowIWork = {
+    intro: 'I use AI to write code faster, not to think less. Every change goes through the same five steps, and nothing ships that I can’t explain.',
+    steps: [
+        { title: 'Spec', body: 'Write down what the feature does, who is allowed to do it and how it fails, before any code is generated. A living project-state document and a decisions log keep every session on track.' },
+        { title: 'Generate', body: 'Generate in small slices with Claude Code, plus Copilot for inline work: one feature or fix at a time, scoped to the spec.' },
+        { title: 'Review every line', body: 'Read the whole diff and check every “it’s done” against the source. If I can’t explain a line, it doesn’t ship.' },
+        { title: 'Test', body: 'Type-check and build gates and the test suite in CI, manual testing across devices at five screen widths, then acceptance testing with stakeholders before release.' },
+        { title: 'Ship and watch', body: 'Every push runs CI and deploys automatically, every release can be rolled back in one step, and monitoring alerts me when something breaks.' },
+    ],
+    catches: [
+        'A CSRF check that accepted any token. Rebuilt it before launch as an origin check plus a real double-submit token.',
+        'An email client with no network timeout that could hang the daily reminder job and silently skip every later run. Replaced it with one that times out.',
+        '“Today” calculated in UTC, which let an expired licence pass eligibility checks for the first four hours of every UAE morning. All business dates now use UAE time.',
+        'An N+1 query in the vendor-approval queue. Batching it cut the p95 response time from 1.36 s to 0.17 s.',
+    ],
+}
 
 export const Social = [
-    { name: 'GitHub', link: 'https://github.com/Mostafa3ta', icon: <FaGithub className='icon_link' /> },
-    { name: 'LinkedIn', link: 'https://www.linkedin.com/in/mostafa-m-dev', icon: <FaLinkedin className='icon_link' /> },
-    { name: 'Email', link: 'mailto:m2ostafa2000@gmail.com', icon: <ImMail4 className='icon_link' /> },
-    { name: 'WhatsApp', link: 'https://wa.me/+201206856251', icon: <IoLogoWhatsapp className='icon_link' /> },
+    { name: 'GitHub', link: CONTACT.github, icon: <FaGithub className='icon_link' /> },
+    { name: 'LinkedIn', link: CONTACT.linkedin, icon: <FaLinkedin className='icon_link' /> },
+    { name: 'Email', link: `mailto:${CONTACT.email}`, icon: <ImMail4 className='icon_link' /> },
+    { name: 'WhatsApp', link: CONTACT.whatsapp, icon: <IoLogoWhatsapp className='icon_link' /> },
+
 ]
 
-export const Experiences = [
+// Newest first.
+export const Experiences: ExperienceProps[] = [
+    {
+        company: 'Elevent',
+        title: 'Frontend Engineer (Sole Developer)',
+        from: 'Jan 2026', to: 'Present',
+        location: 'Remote · UAE',
+        link: 'https://elevent.ae/',
+        description: [
+            'Took a multi-role event-operations platform for UAE food, retail and catering events from first build to a production launch in October 2026, as its only developer.',
+            'Own the frontend end to end: 120+ pages with role-based portals for 7 user types (13 roles, 45 permissions), a typed API client layer across 40+ domains, and a responsive system checked automatically at five screen widths.',
+            'Built the auth layer so tokens never reach JavaScript: a Next.js proxy with httpOnly cookies, CSRF protection and silent token refresh.',
+            'Shipped and operate the full product using AI-assisted development with my own review and testing: FastAPI and PostgreSQL backend, Cloudflare and DigitalOcean hosting, CI on every push, daily backups and one-step rollback.',
+            'Ran structured testing rounds with the product owner and turned the feedback into tracked changes.',
+        ],
+        techs: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI', 'PostgreSQL', 'Cloudflare'],
+    },
     {
         company: 'MedicaProf',
         title: 'Frontend Developer',
-        from: 'April 2025', to: 'Present',
-        description: [
-            'MedicaProf — Led frontend development on a production healthcare platform serving Patients and Doctors using Next.js, TypeScript, and HeroUI.',
-            'Built a fully functional appointment calendar system using FullCalendar and an interactive analytics dashboard with data visualizations using Apache ECharts.',
-            'ELEVENT — Sole developer of a live event-operations platform for food, retail and catering events in the UAE, delivered end to end: web app, backend API, database and deployment, with an iOS/Android app in progress.',
-            'Built the full vendor workflow with Next.js, TypeScript, FastAPI and PostgreSQL: onboarding and document checks, event applications, contracts, food-safety audits, sales reconciliation, invoicing and payouts, with role-based access for vendors, clients, auditors, finance and admins.',
-            'Handled deployment and hosting: web app on Cloudflare, API and managed PostgreSQL on DigitalOcean, with daily backups and a documented release and rollback process.',
-            'Worked directly with the product owner through structured testing rounds, turning feedback into tracked change requests.',
-            'Own quality and reliability end to end: manual and cross-device testing, bug triage, and ongoing production support and maintenance for live users.',
-        ],
-        location: 'Remote',
+        from: 'Apr 2025', to: 'Dec 2025',
+        location: 'Remote · France',
         link: 'https://www.linkedin.com/company/medicaprof/',
-        techs: ['Next.js', 'HTML & CSS', 'Tailwind CSS', 'JavaScript', 'Typescript', 'Redux', 'RESTful APIs']
+        description: [
+            'Frontend developer in a small cross-functional team (web, backend and mobile) building a production healthcare platform for patients and doctors with Next.js, TypeScript and HeroUI.',
+            'Built the appointment calendar with FullCalendar and the analytics dashboard with Apache ECharts, the platform’s most complex features.',
+            'Built the reusable component library the platform’s screens are assembled from.',
+        ],
+        techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'HeroUI', 'FullCalendar', 'ECharts'],
     },
     {
         company: 'Camp Coding',
         title: 'Frontend Developer',
-        from: 'March 2024', to: 'April 2025',
-        description: [
-            'Built and maintained multiple production-grade client web applications in a fast-paced agency environment.',
-            'Worked across React.js and Next.js projects, translating designs into pixel-perfect, accessible UI components.',
-            'Collaborated directly with designers and backend developers to integrate RESTful APIs and ship features on schedule.',
-            'Applied scalable frontend architecture patterns, improving performance and long-term maintainability.',
-        ],
+        from: 'Mar 2024', to: 'Apr 2025',
         location: 'Tanta, Egypt',
         link: 'https://www.linkedin.com/company/campcoding/',
-        techs: ['Next.js', 'React', 'HTML & CSS', 'Bootstrap', 'JavaScript', 'Typescript', 'Redux', 'RESTful APIs']
+        description: [
+            'Built and maintained multiple client web apps in React and Next.js in a fast-paced software agency.',
+            'Turned designs into responsive, accessible UI components and integrated them with backend REST APIs.',
+        ],
+        techs: ['React', 'Next.js', 'TypeScript', 'Redux', 'REST APIs'],
     },
     {
         company: 'Route Academy',
-        title: 'Frontend Developer (internship)',
-        from: 'October 2023', to: 'March 2024',
-        description: [
-            'Completed an intensive 6-month frontend development bootcamp covering core and advanced web technologies.',
-            'Built 7+ real-world projects including an e-commerce platform, quiz app, weather app, and task manager.',
-            'Practiced responsive design, accessibility standards, performance optimization, and unit testing.',
-            'Collaborated with peers in an agile environment to deliver production-ready applications.',
-        ],
+        title: 'Frontend Development Bootcamp',
+        from: 'Oct 2023', to: 'Mar 2024',
         location: 'Cairo, Egypt',
         link: 'https://www.facebook.com/Routelearning/',
-        techs: ['HTML & CSS', 'Bootstrap', 'Tailwind CSS', 'JavaScript', 'React', 'Next.js', 'Typescript', 'Redux', 'Context API', 'Unit Testing', 'JQuery', 'AJAX', 'RESTful APIs',]
+        description: [
+            'Six-month intensive bootcamp in JavaScript, React and Next.js; built 7+ projects.',
+        ],
+        techs: [],
+    },
+]
+
+export const SkillGroups: SkillGroupProps[] = [
+    {
+        label: 'Frontend',
+        skills: [
+            { name: 'React.js', icon: SiReact },
+            { name: 'Next.js (App Router)', icon: SiNextdotjs },
+            { name: 'TypeScript', icon: SiTypescript },
+            { name: 'Tailwind CSS', icon: SiTailwindcss },
+            { name: 'shadcn/ui', icon: SiShadcnui },
+            { name: 'React Hook Form & Zod', icon: MdChecklist },
+            { name: 'Redux Toolkit & Context API', icon: SiRedux },
+            { name: 'Accessibility', icon: MdAccessibilityNew },
+            { name: 'Performance', icon: MdSpeed },
+        ],
+    },
+    {
+        label: 'Engineering practice',
+        skills: [
+            { name: 'Git (GitHub, GitLab)', icon: SiGit },
+            { name: 'CI/CD (GitLab CI, Cloudflare)', icon: MdSyncAlt },
+            { name: 'Testing (Jest, Vitest, Testing Library, Playwright)', icon: MdDevices },
+            { name: 'REST & GraphQL APIs', icon: SiGraphql },
+            { name: 'Deploys on Vercel & Cloudflare', icon: SiCloudflare },
+            { name: 'AI-assisted development (Claude Code, Copilot)', icon: MdAutoAwesome },
+        ],
+    },
+    {
+        label: 'Languages',
+        skills: [
+            { name: 'Arabic (native)', icon: MdTranslate },
+            { name: 'English (advanced)', icon: MdTranslate },
+        ],
     },
 ]

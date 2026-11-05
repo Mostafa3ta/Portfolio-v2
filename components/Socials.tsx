@@ -1,34 +1,22 @@
 import { Social } from '@/constant'
-import Link from 'next/link'
 import React from 'react'
-import { motion } from 'framer-motion'
 
 export default function Socials() {
     return (
-        <motion.ul 
-            className="ml-1 mt-8 flex items-center" 
-            aria-label="Social media links"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-        >
-            {Social.map((item, index) =>
-                <motion.li 
-                    key={index} 
-                    className="mr-5 text-2xl shrink-0"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1, transition: { duration: 0.3, delay: 0.5 + index * 0.1 } }}
-                    whileHover={{ scale: 1.1, y: -4, transition: { duration: 0.2 } }}
-                    whileTap={{ scale: 0.95, transition: { duration: 0.1 } }}
-                    transition={{ duration: 0.2 }}
-                >
-                    <Link className="block" href={item.link} target="_blank" rel="noreferrer noopener" aria-label={`Visit my ${item.name} profile (opens in new tab)`}>
+        <ul className="ml-1 mt-8 flex items-center" aria-label="Social media links">
+            {Social.map((item) =>
+                <li key={item.name} className="mr-5 shrink-0 text-2xl">
+                    <a
+                        className="block text-slate-400 transition hover:-translate-y-1 hover:text-slate-200 focus-visible:text-slate-200 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                        href={item.link}
+                        target={item.link.startsWith('mailto:') ? undefined : '_blank'}
+                        rel="noreferrer noopener"
+                        aria-label={item.link.startsWith('mailto:') ? 'Email me' : `${item.name} (opens in new tab)`}
+                    >
                         {item.icon}
-                    </Link>
-                </motion.li>
+                    </a>
+                </li>
             )}
-        </motion.ul>
-
+        </ul>
     )
 }
-
