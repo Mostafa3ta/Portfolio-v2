@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 import { ImMail4 } from "react-icons/im"
 import { IoLogoWhatsapp } from "react-icons/io"
 import { MdAccessibilityNew, MdAutoAwesome, MdChecklist, MdDevices, MdSpeed, MdSyncAlt, MdTranslate } from "react-icons/md"
-import { SiCloudflare, SiGit, SiGraphql, SiNextdotjs, SiReact, SiRedux, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si"
+import { SiCloudflare, SiCss3, SiGit, SiGraphql, SiHtml5, SiJavascript, SiNextdotjs, SiReact, SiRedux, SiShadcnui, SiTailwindcss, SiTypescript } from "react-icons/si"
 import type { ExperienceProps, SkillGroupProps, WorkProps } from "@/types"
 import { CONTACT } from "./site"
 
@@ -18,7 +18,8 @@ export const NavItems = [
 
 export const Hero = {
     headline: 'Frontend Engineer',
-    location: 'Alexandria, Egypt · Open to relocation and remote work',
+    location: 'Alexandria, Egypt',
+    availability: 'Open to relocation and remote work',
     pitch: 'I build fast, accessible web products and take them all the way from first commit to production.',
     proofs: [
         'Sole developer of a live production platform',
@@ -35,7 +36,7 @@ export const Work: WorkProps[] = [
         description: 'One platform for the whole vendor lifecycle at UAE and GCC events: onboarding and document checks, contracts, on-site operations, POS sales, reconciliation and payouts.',
         caseStudy: '/work/elevent',
         link: 'https://elevent.ae/',
-        img: { src: '/ELEVENT-LOGO.png', width: 180, height: 27, contain: true },
+        img: { src: '/elevent-site.jpg', width: 720, height: 405 },
         techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI', 'PostgreSQL', 'Cloudflare'],
     },
     {
@@ -43,7 +44,7 @@ export const Work: WorkProps[] = [
         tagline: 'Production healthcare platform · Frontend developer',
         description: 'Appointment scheduling and analytics dashboards for patients and doctors.',
         link: 'https://medicaprof.com/en',
-        img: { src: '/MedicaProf.png', width: 353, height: 199 },
+        img: { src: '/medicaprof-site.jpg', width: 720, height: 405 },
         techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'HeroUI', 'FullCalendar', 'ECharts'],
     },
 ]
@@ -170,37 +171,42 @@ export const Experiences: ExperienceProps[] = [
     },
 ]
 
+// `color` is the brand colour the icon takes on hover. Keep each one a complete class name: Tailwind only
+// generates classes it can read verbatim from the source.
 export const SkillGroups: SkillGroupProps[] = [
     {
         label: 'Frontend',
         skills: [
-            { name: 'React.js', icon: SiReact },
-            { name: 'Next.js (App Router)', icon: SiNextdotjs },
-            { name: 'TypeScript', icon: SiTypescript },
-            { name: 'Tailwind CSS', icon: SiTailwindcss },
-            { name: 'shadcn/ui', icon: SiShadcnui },
-            { name: 'React Hook Form & Zod', icon: MdChecklist },
-            { name: 'Redux Toolkit & Context API', icon: SiRedux },
-            { name: 'Accessibility', icon: MdAccessibilityNew },
-            { name: 'Performance', icon: MdSpeed },
+            { name: 'JavaScript', icon: SiJavascript, color: 'group-hover:text-yellow-400' },
+            { name: 'HTML', icon: SiHtml5, color: 'group-hover:text-orange-500' },
+            { name: 'CSS', icon: SiCss3, color: 'group-hover:text-blue-500' },
+            { name: 'React.js', icon: SiReact, color: 'group-hover:text-cyan-400' },
+            { name: 'Next.js (App Router)', icon: SiNextdotjs, color: 'group-hover:text-slate-100' },
+            { name: 'TypeScript', icon: SiTypescript, color: 'group-hover:text-blue-400' },
+            { name: 'Tailwind CSS', icon: SiTailwindcss, color: 'group-hover:text-sky-400' },
+            { name: 'shadcn/ui', icon: SiShadcnui, color: 'group-hover:text-slate-100' },
+            { name: 'React Hook Form & Zod', icon: MdChecklist, color: 'group-hover:text-pink-500' },
+            { name: 'Redux Toolkit & Context API', icon: SiRedux, color: 'group-hover:text-purple-500' },
+            { name: 'Accessibility', icon: MdAccessibilityNew, color: 'group-hover:text-teal-400' },
+            { name: 'Performance', icon: MdSpeed, color: 'group-hover:text-amber-400' },
         ],
     },
     {
         label: 'Engineering practice',
         skills: [
-            { name: 'Git (GitHub, GitLab)', icon: SiGit },
-            { name: 'CI/CD (GitLab CI, Cloudflare)', icon: MdSyncAlt },
-            { name: 'Testing (Jest, Vitest, Testing Library, Playwright)', icon: MdDevices },
-            { name: 'REST & GraphQL APIs', icon: SiGraphql },
-            { name: 'Deploys on Vercel & Cloudflare', icon: SiCloudflare },
-            { name: 'AI-assisted development (Claude Code, Copilot)', icon: MdAutoAwesome },
+            { name: 'Git (GitHub, GitLab)', icon: SiGit, color: 'group-hover:text-orange-600' },
+            { name: 'CI/CD (GitLab CI, Cloudflare)', icon: MdSyncAlt, color: 'group-hover:text-teal-400' },
+            { name: 'Testing (Jest, Vitest, Testing Library, Playwright)', icon: MdDevices, color: 'group-hover:text-green-500' },
+            { name: 'REST & GraphQL APIs', icon: SiGraphql, color: 'group-hover:text-fuchsia-500' },
+            { name: 'Deploys on Vercel & Cloudflare', icon: SiCloudflare, color: 'group-hover:text-orange-400' },
+            { name: 'AI-assisted development (Claude Code, Copilot)', icon: MdAutoAwesome, color: 'group-hover:text-violet-400' },
         ],
     },
     {
         label: 'Languages',
         skills: [
-            { name: 'Arabic (native)', icon: MdTranslate },
-            { name: 'English (advanced)', icon: MdTranslate },
+            { name: 'Arabic (native)', icon: MdTranslate, color: 'group-hover:text-teal-400' },
+            { name: 'English (advanced)', icon: MdTranslate, color: 'group-hover:text-teal-400' },
         ],
     },
 ]

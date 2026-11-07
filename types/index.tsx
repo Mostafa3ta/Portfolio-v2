@@ -29,7 +29,8 @@ export interface ExperienceProps {
 }
 export interface SkillGroupProps {
     label: string;
-    skills: { name: string; icon: IconType }[];
+    /** `color` is the icon's brand colour on hover, as a complete Tailwind class (e.g. `group-hover:text-yellow-400`). */
+    skills: { name: string; icon: IconType; color: string }[];
 }
 export interface SocilasProps {
     name: string;
