@@ -8,7 +8,10 @@ export interface WorkProps {
     name: string;
     tagline: string;
     description: string;
+    /** The live site or demo. */
     link: string;
+    /** Public repository; when set, the card shows "Live demo" and "Source" links instead of the hostname. */
+    source?: string;
     caseStudy?: string;
     featured?: boolean;
     img: { src: string; width: number; height: number; contain?: boolean };

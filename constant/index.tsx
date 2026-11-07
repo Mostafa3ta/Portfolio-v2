@@ -48,6 +48,48 @@ export const Work: WorkProps[] = [
     },
 ]
 
+// Live demo URLs of the open-source showcases on Cloudflare Pages.
+const DEMO = {
+    slotwise: 'https://slotwise-d21.pages.dev',
+    gatekeeper: 'https://gatekeeper-demo.pages.dev',
+    pulseboard: 'https://pulseboard-enb.pages.dev',
+}
+
+export const ShowcaseIntro = {
+    title: 'Open-source showcases',
+    body: 'Elevent and MedicaProf are private codebases, so these three small, finished apps show the same kind of work in the open. Each mirrors a feature I built in production, and each ships with unit and end-to-end tests, CI on every push and a README that explains its key decisions.',
+}
+
+export const Showcases: WorkProps[] = [
+    {
+        name: 'Slotwise',
+        tagline: 'Appointment scheduling · Open source',
+        description: 'A clinic scheduler with week, day and month views, drag to move and resize, overlap and working-hours rules kept in pure, tested functions, and a next-free-slot finder.',
+        link: DEMO.slotwise,
+        source: 'https://github.com/Mostafa3ta/slotwise',
+        img: { src: '/slotwise.png', width: 720, height: 405 },
+        techs: ['Next.js', 'TypeScript', 'FullCalendar', 'Tailwind CSS', 'shadcn/ui', 'Vitest', 'Playwright'],
+    },
+    {
+        name: 'Gatekeeper',
+        tagline: 'Role-based access control · Open source',
+        description: 'Three roles, one permission catalog, a UI that hides what you can’t do and a mock API that refuses it anyway. An inspector panel shows every permission check and API response as you click around.',
+        link: DEMO.gatekeeper,
+        source: 'https://github.com/Mostafa3ta/gatekeeper-demo',
+        img: { src: '/gatekeeper.png', width: 720, height: 405 },
+        techs: ['Next.js', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'React Hook Form', 'Zod', 'Vitest', 'Playwright'],
+    },
+    {
+        name: 'Pulseboard',
+        tagline: 'Analytics dashboard · Open source',
+        description: 'A sales and operations dashboard over a year of seeded orders: KPI tiles with period-over-period change, four Apache ECharts charts, filters that live in the URL so any view can be shared, and CSV export.',
+        link: DEMO.pulseboard,
+        source: 'https://github.com/Mostafa3ta/pulseboard',
+        img: { src: '/pulseboard.png', width: 720, height: 405 },
+        techs: ['Next.js', 'TypeScript', 'Apache ECharts', 'Tailwind CSS', 'shadcn/ui', 'Vitest', 'Playwright'],
+    },
+]
+
 export const HowIWork = {
     intro: 'I use AI to write code faster, not to think less. Every change goes through the same five steps, and nothing ships that I can’t explain.',
     steps: [

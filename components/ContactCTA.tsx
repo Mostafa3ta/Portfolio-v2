@@ -18,7 +18,8 @@ export default function ContactCTA() {
         <div className="relative z-10">
           <h3 className="mb-3 text-3xl font-bold text-slate-200 md:text-4xl">Let’s talk</h3>
           <p className="mb-6 max-w-2xl text-lg text-slate-300">
-            I’m looking for frontend roles, remote or on-site, and I’m open to relocating internationally.
+            I’m looking for a frontend role, remote or on-site, and I’m open to relocating internationally. I also take on frontend
+            contracts: Elevent and MedicaProf both began as freelance engagements and are now in production.
           </p>
           <p className="mb-6 text-sm text-slate-400">
             Email me at{' '}
