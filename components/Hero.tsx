@@ -33,7 +33,7 @@ export default function Hero() {
                 {HeroContent.proofs.map((proof) => (
                     <li key={proof} className="flex items-start gap-2.5 text-sm leading-snug text-slate-300">
                         <MdCheckCircle aria-hidden className="mt-px h-4 w-4 shrink-0 text-teal-400" />
-                        <span>{proof}</span>
+                        <span className="[text-wrap:balance]">{proof}</span>
                     </li>
                 ))}
             </ul>

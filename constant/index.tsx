@@ -23,8 +23,8 @@ export const Hero = {
     pitch: 'I build fast, accessible web products and take them all the way from first commit to production.',
     proofs: [
         'Sole developer of a live production platform',
-        '3 years with React, Next.js and TypeScript',
-        'AI-assisted workflow, every line reviewed',
+        '3 years building for clients in the UAE, France and Egypt',
+        'Tests, CI and code review on everything I ship',
     ],
 }
 
@@ -92,13 +92,13 @@ export const Showcases: WorkProps[] = [
 ]
 
 export const HowIWork = {
-    intro: 'I use AI to write code faster, not to think less. Every change goes through the same five steps, and nothing ships that I can’t explain.',
+    intro: 'I use AI tools to work faster, not to think less. Every change, from a new feature to a one-line fix, goes through the same five steps, and nothing ships that I can’t explain.',
     steps: [
-        { title: 'Spec', body: 'Write down what the feature does, who is allowed to do it and how it fails, before any code is generated. A living project-state document and a decisions log keep every session on track.' },
-        { title: 'Generate', body: 'Generate in small slices with Claude Code, plus Copilot for inline work: one feature or fix at a time, scoped to the spec.' },
-        { title: 'Review every line', body: 'Read the whole diff and check every “it’s done” against the source. If I can’t explain a line, it doesn’t ship.' },
-        { title: 'Test', body: 'Type-check and build gates and the test suite in CI, manual testing across devices at five screen widths, then acceptance testing with stakeholders before release.' },
-        { title: 'Ship and watch', body: 'Every push runs CI and deploys automatically, every release can be rolled back in one step, and monitoring alerts me when something breaks.' },
+        { title: 'Spec', body: 'Pin down what the feature does, who is allowed to use it and how it can fail, before writing any code: the acceptance criteria, the loading, empty and error states, and any open questions for design or product. Decisions are written down, so the next change starts from the same page.' },
+        { title: 'Build in small slices', body: 'One feature or fix at a time, scoped to the spec and built to match the team’s designs and components. AI tools such as Claude Code and GitHub Copilot speed up the implementation; the structure, the trade-offs and the final code are my responsibility.' },
+        { title: 'Review every line', body: 'Read the whole diff the way I’d review a teammate’s pull request, and check every “it’s done” against the code. Security, accessibility and performance get a second look. If I can’t explain a line, it doesn’t ship.' },
+        { title: 'Test', body: 'Type checks, unit and end-to-end tests and a production build run in CI on every push. Then manual passes across browsers and real devices at five screen widths, and acceptance testing with stakeholders before release.' },
+        { title: 'Ship and watch', body: 'Small, predictable releases: deploys are automatic, every release can be rolled back in one step, and monitoring alerts me when something breaks.' },
     ],
     catches: [
         'A CSRF check that accepted any token. Rebuilt it before launch as an origin check plus a real double-submit token.',
