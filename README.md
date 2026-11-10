@@ -17,15 +17,15 @@ Live: https://portfolio-v2-7p0.pages.dev
 ```
 app/
 ├── layout.tsx            # site-wide metadata (title, description, OG/Twitter), font, skip link
-├── page.tsx              # home: hero + Experience, Skills, Work, How I work, Contact; JSON-LD Person
+├── page.tsx              # home: hero + Experience, Skills, Work, Contact; JSON-LD Person
 ├── work/elevent/page.tsx # Elevent case study
 ├── opengraph-image.tsx   # OG image generated with next/og at build time (twitter-image.tsx shares it)
 ├── sitemap.ts, robots.ts
 └── not-found.tsx, error.tsx
-components/               # Hero, Nav, Experience, Skills, Work, HowIWork, ContactCTA, ArchitectureDiagram, ...
+components/               # Hero, Nav, Experience, Skills, Work, ContactCTA, ArchitectureDiagram, ...
 constant/
 ├── site.ts               # domain, title, description, keywords, contact links
-└── index.tsx             # page content: hero copy, experience, skills, work, "How I work"
+└── index.tsx             # page content: hero copy, experience, skills, work
 lib/og.tsx                # OG image layout
 next.config.mjs           # redirects: /cv → Google Drive CV, /projects → /#work
 ```

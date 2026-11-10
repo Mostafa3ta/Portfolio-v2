@@ -5,7 +5,7 @@ import { expect, test } from '@playwright/test'
 test('home page shows the name and the main sections', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByRole('heading', { level: 1, name: 'Mostafa Mahmoud' })).toBeVisible()
-  for (const id of ['experience', 'skills', 'work', 'how-i-work', 'contact']) {
+  for (const id of ['experience', 'skills', 'work', 'contact']) {
     await expect(page.locator(`section#${id}`)).toBeAttached()
   }
 })

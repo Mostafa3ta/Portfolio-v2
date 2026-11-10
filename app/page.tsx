@@ -2,7 +2,6 @@ import {
   Experience,
   Footer,
   Hero,
-  HowIWork,
   Nav,
   Socials,
   Skills,
@@ -52,9 +51,6 @@ export default function Home() {
           </section>
           <section id="work" aria-labelledby="work-heading" className="sections_style">
             <Work />
-          </section>
-          <section id="how-i-work" aria-labelledby="how-i-work-heading" className="sections_style">
-            <HowIWork />
           </section>
           <section id="contact" aria-labelledby="contact-heading">
             <ContactCTA />

@@ -12,7 +12,6 @@ export const NavItems = [
     { id: 'experience', label: 'Experience' },
     { id: 'skills', label: 'Skills' },
     { id: 'work', label: 'Work' },
-    { id: 'how-i-work', label: 'How I work' },
     { id: 'contact', label: 'Contact' },
 ]
 
@@ -91,23 +90,6 @@ export const Showcases: WorkProps[] = [
     },
 ]
 
-export const HowIWork = {
-    intro: 'I use AI tools to work faster, not to think less. Every change, from a new feature to a one-line fix, goes through the same five steps, and nothing ships that I can’t explain.',
-    steps: [
-        { title: 'Spec', body: 'Pin down what the feature does, who is allowed to use it and how it can fail, before writing any code: the acceptance criteria, the loading, empty and error states, and any open questions for design or product. Decisions are written down, so the next change starts from the same page.' },
-        { title: 'Build in small slices', body: 'One feature or fix at a time, scoped to the spec and built to match the team’s designs and components. AI tools such as Claude Code and GitHub Copilot speed up the implementation; the structure, the trade-offs and the final code are my responsibility.' },
-        { title: 'Review every line', body: 'Read the whole diff the way I’d review a teammate’s pull request, and check every “it’s done” against the code. Security, accessibility and performance get a second look. If I can’t explain a line, it doesn’t ship.' },
-        { title: 'Test', body: 'Type checks, unit and end-to-end tests and a production build run in CI on every push. Then manual passes across browsers and real devices at five screen widths, and acceptance testing with stakeholders before release.' },
-        { title: 'Ship and watch', body: 'Small, predictable releases: deploys are automatic, every release can be rolled back in one step, and monitoring alerts me when something breaks.' },
-    ],
-    catches: [
-        'A CSRF check that accepted any token. Rebuilt it before launch as an origin check plus a real double-submit token.',
-        'An email client with no network timeout that could hang the daily reminder job and silently skip every later run. Replaced it with one that times out.',
-        '“Today” calculated in UTC, which let an expired licence pass eligibility checks for the first four hours of every UAE morning. All business dates now use UAE time.',
-        'An N+1 query in the vendor-approval queue. Batching it cut the p95 response time from 1.36 s to 0.17 s.',
-    ],
-}
-
 export const Social = [
     { name: 'GitHub', link: CONTACT.github, icon: <FaGithub className='icon_link' /> },
     { name: 'LinkedIn', link: CONTACT.linkedin, icon: <FaLinkedin className='icon_link' /> },
@@ -128,7 +110,7 @@ export const Experiences: ExperienceProps[] = [
             'Took a multi-role event-operations platform for UAE food, retail and catering events from first build to a production launch in October 2026, as its only developer.',
             'Own the frontend end to end: 120+ pages with role-based portals for 7 user types (13 roles, 45 permissions), a typed API client layer across 40+ domains, and a responsive system checked automatically at five screen widths.',
             'Built the auth layer so tokens never reach JavaScript: a Next.js proxy with httpOnly cookies, CSRF protection and silent token refresh.',
-            'Shipped and operate the full product using AI-assisted development with my own review and testing: FastAPI and PostgreSQL backend, Cloudflare and DigitalOcean hosting, CI on every push, daily backups and one-step rollback.',
+            'Shipped and operate the full product in production: FastAPI and PostgreSQL backend, Cloudflare and DigitalOcean hosting, CI on every push, daily backups and one-step rollback.',
             'Ran structured testing rounds with the product owner and turned the feedback into tracked changes.',
         ],
         techs: ['Next.js', 'React', 'TypeScript', 'Tailwind CSS', 'shadcn/ui', 'FastAPI', 'PostgreSQL', 'Cloudflare'],
@@ -199,7 +181,7 @@ export const SkillGroups: SkillGroupProps[] = [
             { name: 'Testing (Jest, Vitest, Testing Library, Playwright)', icon: MdDevices, color: 'group-hover:text-green-500' },
             { name: 'REST & GraphQL APIs', icon: SiGraphql, color: 'group-hover:text-fuchsia-500' },
             { name: 'Deploys on Vercel & Cloudflare', icon: SiCloudflare, color: 'group-hover:text-orange-400' },
-            { name: 'AI-assisted development (Claude Code, Copilot)', icon: MdAutoAwesome, color: 'group-hover:text-violet-400' },
+            { name: 'AI coding tools (GitHub Copilot, Claude Code)', icon: MdAutoAwesome, color: 'group-hover:text-violet-400' },
         ],
     },
     {

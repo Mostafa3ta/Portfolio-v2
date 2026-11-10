@@ -41,7 +41,7 @@ const sections = [
 
 const owned = [
   "The entire frontend: 120+ pages, the design system on shadcn/ui and Tailwind CSS, role-based portals and the typed API layer.",
-  "The full product in production: backend, database, hosting, CI, deploys and monitoring, built with AI-assisted development and my own review and testing.",
+  "The full product in production: backend, database, hosting, CI, deploys and monitoring.",
 ];
 
 const decided = [

@@ -1,7 +1,6 @@
 import Footer from '@/components/Footer';
 import Nav from '@/components/Nav';
 import Work from '@/components/Work';
-import HowIWork from '@/components/HowIWork';
 import Experience from '@/components/Experience';
 import Socials from '@/components/Socials';
 import Skills from '@/components/Skills';
@@ -12,7 +11,6 @@ export {
     Socials,
     Experience,
     Work,
-    HowIWork,
     Footer,
     Skills,
     ContactCTA,
